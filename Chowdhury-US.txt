@@ -1,7 +1,0 @@
-Rattil Chowdhury
-CS 308-03
-
-HW-US
-1.	As a casual pc gamer, I want to be able to find similar games that aren’t pricey or meet bulky hardware requirements, so I can readily find something to keep my mind off work.
-2.	As a hardcore pc gamer, I want to order and keep track of what games I play least first so I can play what games I haven’t accessed in a while.
-3.	As an entry level pc gamer, I want to be able to find games that are similar to what I play, so I can explore more of what I like or dislike in a gaming genre.
