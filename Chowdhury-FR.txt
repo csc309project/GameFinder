@@ -1,7 +1,0 @@
-Rattil Chowdhury
-CS 308-03
-
-HW-FR
-1.	The application shall order a list of games by the least amount of game time played first.
-2.	The application shall, by default, order a list of searched games by earliest release date first.
-3.	The application shall create a search filter based on Steam client’s game genre.
