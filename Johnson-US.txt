@@ -1,0 +1,7 @@
+User stories:
+
+As a gamer on a budget, I want to be able to filter recommendations based on price, so that I can see only the games that are within my budget.
+
+As a gamer with a large library of games, I want to be recommended games within my library that I have not played yet or have very little play time in, so that I can find something new to play.
+
+As a gamer with a less powerful system, I want to be able to filter recommendations based on hardware requirements, so that I can find a game I will be able to play.
