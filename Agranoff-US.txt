@@ -1,3 +1,3 @@
 As a beginner player, I want a “staff picks” page, so that I can see what popular games there are. 
 As a veteran player, I want to share my entire game library, so that I can have accurate game suggestions based on every game I’ve played.
-As a player, I want at least 20 games suggested to me at a time, so that I have many different options for games to choose from.
+As a player, I want at least 5 games suggested to me at a time, so that I have many different options for games to choose from.
