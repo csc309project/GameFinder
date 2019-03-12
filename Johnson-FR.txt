@@ -1,8 +1,8 @@
 Functional Requirements
 
-The system shall allow the user to filter recommendations based on review scores.
+The system shall allow the user to filter game recommendations based on Steam user reviews.
 
 The system shall provide links to videos and articles of reviews for recommended games.
 
-The system shall allow the user to create a list of games that they are interested in playing.
+The system shall allow the user to mark games as "Interested" and will save marked games in a list.
 
