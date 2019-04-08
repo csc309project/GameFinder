@@ -1,0 +1,12 @@
+language: java
+jdk:
+- oraclejdk8
+
+addons:
+  sonarcloud:
+    organization: "csc309project"
+    token:
+      secure: "5dbe3908e147842e8a5e7d1c9f7ac79d10fc1f92"
+script:
+- ant build
+- sonar-scanner
