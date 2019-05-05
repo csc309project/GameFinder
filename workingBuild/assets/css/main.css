@@ -3982,7 +3982,7 @@ input, select, textarea {
 .dropbtn {
   background-color: #4CAF50;
   color: white;
-  padding: 16px 25px;
+  padding: 10px 30px;
   font-size: 16px;
   border: none;
   position: relative;
@@ -3991,6 +3991,7 @@ input, select, textarea {
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
+  padding: 0px 50px;
   position: relative;
   display: inline-block;
 }
@@ -4000,7 +4001,7 @@ input, select, textarea {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 100%;
+  max-width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   overflow:auto
