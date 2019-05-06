@@ -6,7 +6,7 @@ XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest,
 { steamKey, steamBaseURL, exampleProfileID } = require('./config');
 var app = express(),
 getAppListURL = steamBaseURL + 'ISteamApps/GetAppList/v2/?key=' + steamKey;
-if (fs.existsSync('output.json')) {
+if (fs.existsSync('../appList.json')) {
     return;
 }
 var xhr = new XMLHttpRequest();
@@ -20,7 +20,7 @@ function processRequest(e) {
         response.applist.apps.sort(function(a, b) {
             return ('' + a.name.trim()).localeCompare(b.name.trim());
         });
-        fs.writeFile('output.json', JSON.stringify(response, null, 4), (err) => {
+        fs.writeFile('../appList.json', JSON.stringify(response, null, 4), (err) => {
             // In case of a error throw err.
             if (err) throw err;
         })
