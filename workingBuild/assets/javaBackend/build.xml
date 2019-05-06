@@ -30,11 +30,6 @@
         <pathelement location="json-simple-1.1.jar"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
-    <path id="run.Search.classpath">
-        <path refid="javaBackend.classpath"/>
-        <pathelement location="json-simple-1.1.jar"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
@@ -74,7 +69,7 @@
     </target>
     <target name="Search">
         <java classname="logic.Search" failonerror="true" fork="yes">
-            <classpath refid="run.Search.classpath"/>
+            <classpath refid="javaBackend.classpath"/>
         </java>
     </target>
 </project>
