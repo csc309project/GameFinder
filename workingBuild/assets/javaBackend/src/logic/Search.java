@@ -9,7 +9,7 @@ public class Search {
 		System.out.println(currentDir.getAbsolutePath());
 		String absolutePath = currentDir.getAbsolutePath();
 		String filePath = absolutePath.substring(0,absolutePath.lastIndexOf(File.separator));
-		File appListFile = new File(filePath + "/appList.json");
+		File appListFile = new File(filePath + "/../appList.json");
 		System.out.println(appListFile.getAbsolutePath());
 		if (appListFile.exists()) {
 			System.out.println("appListFile Found");
