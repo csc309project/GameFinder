@@ -1,7 +1,9 @@
 package logic;
 import java.io.File;
+import org.json.simple.JSONObject;
 
 public class Search {
+	JSONObject obj = new JSONObject();
 	public static int retrieveAppList() {
 		File currentDir = new File(".");
 		System.out.println(currentDir.getAbsolutePath());
@@ -15,6 +17,7 @@ public class Search {
 		else {
 			System.out.println("File not found");
 		}
+		
 		return 0;
 	}
 	
