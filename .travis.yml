@@ -8,8 +8,6 @@ addons:
     token:
       secure: "5dbe3908e147842e8a5e7d1c9f7ac79d10fc1f92"
 
-before_install: cd workingBuild/backend
-
 script:
 - mvn test -B
 - sonar-scanner
