@@ -1,0 +1,8 @@
+language: java
+jdk:
+- oraclejdk8
+
+before_install: cd workingBuild/backend
+
+script:
+- mvn test -B
