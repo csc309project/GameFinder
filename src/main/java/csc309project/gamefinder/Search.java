@@ -1,4 +1,4 @@
-package csc309project.GameFinder;
+package csc309project.gamefinder;
 
 public class Search {
 	

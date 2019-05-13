@@ -1,4 +1,4 @@
-package csc309project.GameFinder;
+package csc309project.gamefinder;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
