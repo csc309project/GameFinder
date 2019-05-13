@@ -1,4 +1,4 @@
-package csc309project.gamefinder;
+package cscproject.gamefinder;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

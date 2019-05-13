@@ -1,4 +1,4 @@
-package csc309project.gamefinder;
+package cscproject.gamefinder;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

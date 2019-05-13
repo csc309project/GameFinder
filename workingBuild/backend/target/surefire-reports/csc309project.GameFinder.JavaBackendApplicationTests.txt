@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: csc309project.gamefinder.JavaBackendApplicationTests
+Test set: JavaBackendApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.983 s - in csc309project.gamefinder.JavaBackendApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.983 s - in JavaBackendApplicationTests
