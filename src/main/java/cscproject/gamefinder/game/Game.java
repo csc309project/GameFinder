@@ -4,7 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@Data
+@AllArgsConstructor
 @Entity
 public class Game {
     @Id
@@ -14,8 +18,9 @@ public class Game {
     private String description;
     private String steamURL;
     private String reviews;
+    private double price;
 
-    public Game(String name, String description, String steamURL, String reviews) {
+    public Game(String name, String description, String steamURL, String reviews, double price) {
         this.name = name;
         this.description = description;
         this.steamURL = steamURL;
@@ -40,6 +45,10 @@ public class Game {
 
     public String getReviews() {
         return this.reviews;
+    }
+
+    public double getPrice() {
+        return this.price;
     }
 
 }

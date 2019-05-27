@@ -5,23 +5,28 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.concurrent.Future;
+import java.util.Collection;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping("/api")
 public class GameController {
 
     @Autowired
     GameRepository gameRepository;
 
-    @GetMapping("/game/{gid}")
+    @GetMapping("/game")
+    Collection<Game> games() {
+        return gameRepository.findAll();
+    }
+
+    @GetMapping("/game/{name}")
     @ResponseBody
-    public ResponseEntity getGamesWithName(@RequestParam String name) {
-        Future<Game> game = gameRepository.findGameByName(name);
+    public ResponseEntity getGamesWithName(@PathVariable String name) {
+        Game game = gameRepository.findGameByName(name);
 
         try {
-            game.get().getName();
-            return ResponseEntity.status(HttpStatus.OK).body(game.get());
+            game.getName();
+            return ResponseEntity.status(HttpStatus.OK).body(game);
         }
         catch(Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Could not be found");
