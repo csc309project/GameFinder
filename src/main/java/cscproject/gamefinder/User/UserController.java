@@ -35,7 +35,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(user.get());
         }
         catch(Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not be found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not found");
         }
     }
 
@@ -43,7 +43,7 @@ public class UserController {
     public ResponseEntity post(@RequestBody User user) {
         userRepository.save(user);
 
-        return ResponseEntity.status(HttpStatus.OK).body("Posted");
+        return ResponseEntity.status(HttpStatus.OK).body("Created");
     }
 
     @RequestMapping(method = RequestMethod.PUT)
