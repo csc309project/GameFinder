@@ -1,6 +1,5 @@
 package cscproject.gamefinder.game;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,15 +8,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.concurrent.Future;
 
 @RestController
-@RequestMapping(value = "/game", produces = "application/json")
+@RequestMapping(value = "/api")
 public class GameController {
 
     @Autowired
     GameRepository gameRepository;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping("/game/{gid}")
     @ResponseBody
-    public ResponseEntity getCommunityWithName(@RequestParam String name) {
+    public ResponseEntity getGamesWithName(@RequestParam String name) {
         Future<Game> game = gameRepository.findGameByName(name);
 
         try {
@@ -29,23 +28,23 @@ public class GameController {
         }
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping("/game")
     public ResponseEntity post(@RequestBody Game game) {
         gameRepository.save(game);
 
         return ResponseEntity.status(HttpStatus.OK).body("Posted");
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
+    @PutMapping("/game")
     public ResponseEntity put(@RequestBody Game game) {
         gameRepository.save(game);
 
         return ResponseEntity.status(HttpStatus.OK).body("Edited");
     }
 
-    @RequestMapping(method = RequestMethod.DELETE)
+    @DeleteMapping("/game")
     public ResponseEntity delete(@RequestBody Game game) {
-        ResponseEntity res = getCommunityWithName(game.getName());
+        ResponseEntity res = getGamesWithName(game.getName());
 
         if(res.getStatusCode() == HttpStatus.OK) {
             Game temp = (Game) res.getBody();
