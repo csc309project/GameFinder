@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import javax.validation.Valid;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -37,7 +35,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(user.getUsername());
         }
         catch(Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }
 
