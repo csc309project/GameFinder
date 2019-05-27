@@ -6,18 +6,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Future;
+import javax.validation.Valid;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @RestController
-@RequestMapping(value = "/user", produces = "application/json")
+@RequestMapping("/api")
 public class UserController {
 
     @Autowired
     UserRepository userRepository;
 
-    public List<User> getUsers(List<Long> uids){
-        List <User> users = new ArrayList<>();
+    public ArrayList<User> getUsers(ArrayList<Long> uids){
+        ArrayList <User> users = new ArrayList<>();
         for(Long uid: uids) {
             User user = userRepository.findById(uid).get();
             users.add(user);
@@ -25,44 +26,44 @@ public class UserController {
         return users;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
+    @GetMapping("/users")
     public ResponseEntity getUser (@RequestParam String username) {
-        Future<User> user = userRepository.findUserByUsername(username);
+        User user = userRepository.findByName(username);
 
         try {
-            user.get().getUsername();
-            return ResponseEntity.status(HttpStatus.OK).body(user.get());
+            user.getUsername();
+            return ResponseEntity.status(HttpStatus.OK).body(user.getUsername());
         }
         catch(Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not found");
         }
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity post(@RequestBody User user) {
+    @PostMapping("/create")
+    public ResponseEntity<User> create(@Valid @RequestBody User user) throws URISyntaxException{
         userRepository.save(user);
 
-        return ResponseEntity.status(HttpStatus.OK).body("Created");
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
-    public ResponseEntity put(@RequestBody User user) {
+    @PutMapping("/edit")
+    public ResponseEntity<User> edit(@Valid @RequestBody User user) {
         userRepository.save(user);
 
-        return ResponseEntity.status(HttpStatus.OK).body("Edited");
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE)
-    public ResponseEntity delete(@RequestBody User user) {
-        ResponseEntity res = getUser(user.getUsername());
+    @DeleteMapping("/delete")
+    public ResponseEntity<?> delete(@RequestBody User user) {
+        ResponseEntity response = getUser(user.getUsername());
 
-        if(res.getStatusCode() == HttpStatus.OK) {
-            User temp = (User) res.getBody();
+        if(response.getStatusCode() == HttpStatus.OK) {
+            User temp = (User) response.getBody();
             userRepository.deleteById(temp.getUserId());
-            return ResponseEntity.status(HttpStatus.OK).body("Deleted");
+            return ResponseEntity.status(HttpStatus.OK).body(user);
         }
 
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }
