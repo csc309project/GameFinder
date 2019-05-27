@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -27,9 +28,9 @@ public class UserController {
     }
 
     @ResponseBody
-    @GetMapping("/users")
-    public ResponseEntity getUser (@RequestParam String username) {
-        User user = userRepository.findByName(username);
+    @GetMapping("/user/{username}")
+    public ResponseEntity getUser (@PathVariable String username) {
+        User user = userRepository.findByUserName(username);
 
         try {
             user.getUsername();
@@ -40,28 +41,28 @@ public class UserController {
         }
     }
 
-    @PostMapping("/create")
+    @PostMapping("/user")
     public ResponseEntity<User> create(@Valid @RequestBody User user) throws URISyntaxException{
         userRepository.save(user);
 
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
-    @PutMapping("/edit")
+    @PutMapping("/user")
     public ResponseEntity<User> edit(@Valid @RequestBody User user) {
         userRepository.save(user);
 
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> delete(@RequestBody User user) {
-        ResponseEntity response = getUser(user.getUsername());
+    @DeleteMapping("/user/{username}")
+    public ResponseEntity<?> delete(@PathVariable String username) {
+        ResponseEntity response = getUser(username);
 
         if(response.getStatusCode() == HttpStatus.OK) {
             User temp = (User) response.getBody();
             userRepository.deleteById(temp.getUserId());
-            return ResponseEntity.status(HttpStatus.OK).body(user);
+            return ResponseEntity.status(HttpStatus.OK).body("Deleted " + username);
         }
 
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
