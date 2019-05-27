@@ -1,10 +1,9 @@
 package cscproject.gamefinder.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    public List<User> getUserProfiles(List<Long> uids){
+    public List<User> getUsers(List<Long> uids){
         List <User> users = new ArrayList<>();
         for(Long uid: uids) {
             User user = userRepository.findById(uid).get();
@@ -28,7 +27,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getUserWithUsername(@RequestParam String username) {
+    public ResponseEntity getUser (@RequestParam String username) {
         Future<User> user = userRepository.findUserByUsername(username);
 
         try {
@@ -36,7 +35,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(user.get());
         }
         catch(Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Could not be found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not be found");
         }
     }
 
@@ -56,7 +55,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.DELETE)
     public ResponseEntity delete(@RequestBody User user) {
-        ResponseEntity res = getUserWithUsername(user.getUsername());
+        ResponseEntity res = getUser(user.getUsername());
 
         if(res.getStatusCode() == HttpStatus.OK) {
             User temp = (User) res.getBody();
@@ -64,6 +63,6 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body("Deleted");
         }
 
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Could not find cm.user to delete");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
     }
 }
