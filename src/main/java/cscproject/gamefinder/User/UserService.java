@@ -17,7 +17,7 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void insertGameList(List<User> users) {
+    public void insertUserList(List<User> users) {
         for (User user : users) {
             userRepository.save(user);
         }
