@@ -26,7 +26,6 @@ public class UserController {
         return users;
     }
 
-    @ResponseBody
     @GetMapping("/user/{username}")
     public ResponseEntity getUser (@PathVariable String username) {
         User user = userRepository.findByUsername(username);
