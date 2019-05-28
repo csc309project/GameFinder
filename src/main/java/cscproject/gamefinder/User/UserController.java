@@ -16,19 +16,9 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
-    public ArrayList<User> getUsers(ArrayList<Long> uids){
-        ArrayList <User> users = new ArrayList<>();
-        for(Long uid: uids) {
-            User user = userRepository.findById(uid).get();
-            users.add(user);
-        }
-        return users;
-    }
-
-    @ResponseBody
     @GetMapping("/user/{username}")
     public ResponseEntity getUser (@PathVariable String username) {
-        User user = userRepository.findByUserName(username);
+        User user = userRepository.findByUsername(username);
 
         try {
             user.getUsername();

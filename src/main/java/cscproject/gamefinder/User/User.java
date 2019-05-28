@@ -15,12 +15,10 @@ public class User {
     private String username;
     private String password;
 
-    public User(String fname, String username, String password) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
-
-    public User() {}
 
     public long getUserId() {
         return userId;

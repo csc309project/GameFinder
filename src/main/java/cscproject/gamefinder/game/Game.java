@@ -25,6 +25,7 @@ public class Game {
         this.description = description;
         this.steamURL = steamURL;
         this.reviews = reviews;
+        this.price = price;
     }
 
     public long getGid() {
