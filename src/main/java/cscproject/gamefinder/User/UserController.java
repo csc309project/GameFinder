@@ -16,6 +16,7 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    @ResponseBody
     public ArrayList<User> getUsers(ArrayList<Long> uids){
         ArrayList <User> users = new ArrayList<>();
         for(Long uid: uids) {
@@ -28,7 +29,7 @@ public class UserController {
     @ResponseBody
     @GetMapping("/user/{username}")
     public ResponseEntity getUser (@PathVariable String username) {
-        User user = userRepository.findByUserName(username);
+        User user = userRepository.findByUsername(username);
 
         try {
             user.getUsername();
