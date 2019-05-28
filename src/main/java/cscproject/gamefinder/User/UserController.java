@@ -15,6 +15,8 @@ public class UserController {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    UserService userService;
 
     @GetMapping("/user/{username}")
     public ResponseEntity getUser (@PathVariable String username) {
