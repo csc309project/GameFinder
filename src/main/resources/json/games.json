@@ -1,7 +1,7 @@
 {
     "gamesList": [{
         "name" : "DOTA 2",
-        "description" : "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has taken on a life of its own.",
+        "description" : "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover.",
         "steamURL" : "https://store.steampowered.com/app/570/Dota_2/",
         "reviews" : "Very Positive",
         "price" : 0.0
@@ -13,13 +13,13 @@
         "price" : 29.99
     }, {
         "name" : "Counter-Strike: Global Offensive",
-        "description" : "Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).",
+        "description" : "Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago.",
         "steamURL" : "https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/",
         "reviews" : "Very Positive",
         "price" : 0.0
     }, {
         "name" : "Total War: THREE KINGDOMS",
-        "description" : "Total War: THREE KINGDOMS is the first in the award-winning series to recreate epic conflict across ancient China. Combining a gripping turn-based campaign of empire-building & conquest with stunning real-time battles, THREE KINGDOMS redefines the series in an age of heroes & legends.",
+        "description" : "Total War: THREE KINGDOMS is the first in the award-winning series to recreate epic conflict across ancient China.",
         "steamURL" : "https://store.steampowered.com/app/779340/Total_War_THREE_KINGDOMS/",
         "reviews" : "Very Positive",
         "price" : 59.99

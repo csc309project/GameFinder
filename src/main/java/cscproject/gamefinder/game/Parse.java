@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class Parse {
 
-    public List<Game> createGameList(String[] args) throws Exception {
+    public static List<Game> createGameList() throws Exception {
         JSONParser parser = new JSONParser();
         ArrayList<Game> game_arr = new ArrayList<Game>();
 
