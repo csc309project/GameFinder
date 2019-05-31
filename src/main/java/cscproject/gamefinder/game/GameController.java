@@ -18,11 +18,11 @@ public class GameController {
     GameService gameService;
 
     @GetMapping("/recommendations")
-    public List<Game> getRecommendations(@RequestBody Game game) {
-        List<Game> recommendations = new ArrayList<>();
-
-
-        return recommendations;
+    public Game getRecommendation(@RequestBody Game game) {
+        List<Game> allGames = gameService.getAllGames();
+        int ID = (int) (Math.random() * ((allGames.size() - 1) + 1)) + 1;
+        Game recommendation = gameRepository.findGameByGid(ID);
+        return recommendation;
     }
 
     @GetMapping("/game")
