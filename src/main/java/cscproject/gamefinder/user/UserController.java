@@ -1,4 +1,4 @@
-package cscproject.gamefinder.User;
+package cscproject.gamefinder.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,7 +26,7 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.OK).body(user.getUsername());
         }
         catch(Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("user not found");
         }
     }
 

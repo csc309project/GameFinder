@@ -1,4 +1,4 @@
-package cscproject.gamefinder.User;
+package cscproject.gamefinder.user;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

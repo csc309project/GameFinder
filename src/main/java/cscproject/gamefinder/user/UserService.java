@@ -1,4 +1,4 @@
-package cscproject.gamefinder.User;
+package cscproject.gamefinder.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

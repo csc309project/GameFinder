@@ -1,4 +1,4 @@
-package cscproject.gamefinder.User;
+package cscproject.gamefinder.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

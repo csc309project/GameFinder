@@ -21,7 +21,7 @@ public class GameController {
     public Game getRecommendation(@RequestBody Game game) {
         Random randInt = new Random();
         List<Game> allGames = gameService.getAllGames();
-        int gameID = (int) (randInt.nextInt() * ((allGames.size() - 1) + 1)) + 1;
+        int gameID = (randInt.nextInt() * ((allGames.size() - 1) + 1)) + 1;
         return gameRepository.findGameByGid(gameID);
     }
 
