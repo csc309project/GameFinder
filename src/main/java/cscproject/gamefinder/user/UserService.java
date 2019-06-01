@@ -9,12 +9,12 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
-    }
-
-    public void insertUser(User user) {
+    public boolean newUser(User user) {
+        if (userRepository.findByUsername(user.getUsername()).getUsername() == user.getUsername()) {
+            return false;
+        }
         userRepository.save(user);
+        return true;
     }
 
     public void insertUserList(List<User> users) {

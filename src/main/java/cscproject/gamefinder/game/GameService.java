@@ -14,10 +14,6 @@ public class GameService {
         return gameRepository.findAll();
     }
 
-    public void insertGame(Game game) {
-        gameRepository.save(game);
-    }
-
     public void insertGameList(List<Game> games) {
         for (Game game : games) {
             gameRepository.save(game);

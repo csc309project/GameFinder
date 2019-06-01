@@ -31,10 +31,11 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    public ResponseEntity<User> create(@Valid @RequestBody User user) throws URISyntaxException{
-        userRepository.save(user);
-
-        return ResponseEntity.status(HttpStatus.OK).body(user);
+    public ResponseEntity create(@Valid @RequestBody User user) throws URISyntaxException{
+        if (userService.newUser(user)) {
+            return ResponseEntity.status(HttpStatus.OK).body(user);
+        }
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Username already exists");
     }
 
     @PutMapping("/user")
@@ -45,7 +46,7 @@ public class UserController {
     }
 
     @DeleteMapping("/user/{username}")
-    public ResponseEntity<?> delete(@PathVariable String username) {
+    public ResponseEntity delete(@PathVariable String username) {
         ResponseEntity response = getUser(username);
 
         if(response.getStatusCode() == HttpStatus.OK) {
