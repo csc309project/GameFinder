@@ -18,11 +18,9 @@ public class GameController {
     GameService gameService;
 
     @GetMapping("/recommendations")
-    public Game getRecommendation(@RequestBody Game game) {
-        Random randInt = new Random();
-        List<Game> allGames = gameService.getAllGames();
-        int gameID = (randInt.nextInt() * ((allGames.size() - 1) + 1)) + 1;
-        return gameRepository.findGameByGid(gameID);
+    public ResponseEntity getRecommendation(@RequestBody String gameName) {
+        Game recommendation = gameService.getRecommendation(gameName);
+        return ResponseEntity.status(HttpStatus.OK).body(recommendation);
     }
 
     @GetMapping("/game")
