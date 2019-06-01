@@ -5,8 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/api")
@@ -19,10 +19,10 @@ public class GameController {
 
     @GetMapping("/recommendations")
     public Game getRecommendation(@RequestBody Game game) {
+        Random randInt = new Random();
         List<Game> allGames = gameService.getAllGames();
-        int ID = (int) (Math.random() * ((allGames.size() - 1) + 1)) + 1;
-        Game recommendation = gameRepository.findGameByGid(ID);
-        return recommendation;
+        int gameID = (int) (randInt.nextInt() * ((allGames.size() - 1) + 1)) + 1;
+        return gameRepository.findGameByGid(gameID);
     }
 
     @GetMapping("/game")

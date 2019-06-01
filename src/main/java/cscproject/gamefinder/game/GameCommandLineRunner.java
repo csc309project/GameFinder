@@ -24,10 +24,10 @@ public class GameCommandLineRunner implements CommandLineRunner {
             gameList = Parse.createGameList();
         }
         catch(Exception e) {
-            System.out.println("Error parsing json");
+            log.debug("Error parsing json");
         }
         gameService.insertGameList(gameList);
-        System.out.println(gameService.getAllGames().toString());
+        log.debug(gameService.getAllGames().toString());
 
     }
 }
