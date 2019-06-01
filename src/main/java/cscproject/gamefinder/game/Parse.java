@@ -14,6 +14,8 @@ import java.io.IOException;
 
 public class Parse {
 
+    private Parse() {};
+
     public static List<Game> createGameList() throws ParseException {
         JSONParser parser = new JSONParser();
         ArrayList<Game> gameArr = new ArrayList<>();
@@ -25,8 +27,8 @@ public class Parse {
             Object obj = parser.parse(new FileReader(file));
             JSONObject jsonObject = (JSONObject) obj;
 
-            JSONArray JSONarr = (JSONArray) jsonObject.get("gamesList");
-            Iterator iterator = JSONarr.iterator();
+            JSONArray arrJSON = (JSONArray) jsonObject.get("gamesList");
+            Iterator iterator = arrJSON.iterator();
 
             while (iterator.hasNext()) {
                 JSONObject arrObj = (JSONObject) iterator.next();
