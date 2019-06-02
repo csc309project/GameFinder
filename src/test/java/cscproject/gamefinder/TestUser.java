@@ -74,6 +74,7 @@ public class TestUser {
         URI deleteUri = new URI(deleteUrl);
         User dummy = new User("dummy", "password");
         restTemplate.postForEntity(uri, dummy, String.class);
+
         restTemplate.delete(deleteUri);
 
         try {

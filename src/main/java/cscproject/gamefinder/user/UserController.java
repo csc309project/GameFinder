@@ -18,11 +18,10 @@ public class UserController {
 
     @GetMapping("/user/{username}")
     public ResponseEntity getUser (@PathVariable String username) {
-        User user = userRepository.findByUsername(username);
-
         try {
+            User user = userRepository.findByUsername(username);
             user.getUsername();
-            return ResponseEntity.status(HttpStatus.OK).body(user.getUsername());
+            return ResponseEntity.status(HttpStatus.OK).body(user);
         }
         catch(Exception e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("user not found");
@@ -46,15 +45,14 @@ public class UserController {
 
     @DeleteMapping("/user/{username}")
     public ResponseEntity delete(@PathVariable String username) {
-        ResponseEntity response = getUser(username);
-
-        if(response.getStatusCode() == HttpStatus.OK) {
-            User temp = (User) response.getBody();
-            userRepository.deleteById(temp.getUserId());
+        try {
+            User user = userRepository.findByUsername(username);
+            userRepository.deleteById(user.getUserId());
             return ResponseEntity.status(HttpStatus.OK).body("Deleted " + username);
         }
-
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 
 }
