@@ -14,10 +14,11 @@ public class UserService {
             userRepository.findByUsername(user.getUsername()).getUsername();
         }
         catch (Exception e){
-            return false;
+            // We know the user isn't in the database now
+            userRepository.save(user);
+            return true;
         }
-        userRepository.save(user);
-        return true;
+        return false;
     }
 
     public void insertUserList(List<User> users) {
