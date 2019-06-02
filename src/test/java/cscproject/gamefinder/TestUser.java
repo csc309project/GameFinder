@@ -30,5 +30,5 @@ public class TestUser {
         URI uri = new URI(baseUrl);
         ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
     }
-    */
-}
+
+} */
