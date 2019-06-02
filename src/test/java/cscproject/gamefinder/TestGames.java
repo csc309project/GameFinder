@@ -1,7 +1,6 @@
 package cscproject.gamefinder;
 
 import cscproject.gamefinder.game.Game;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,7 +21,7 @@ import static junit.framework.TestCase.*;
 public class TestGames {
 
 	@LocalServerPort
-	private int randomServerPort;
+	int randomServerPort;
 
 	@Test
 	public void testGetGameListSuccess() throws URISyntaxException
@@ -37,7 +36,6 @@ public class TestGames {
 
 	@Test
 	public void testGameGet() throws URISyntaxException {
-
 		RestTemplate restTemplate = new RestTemplate();
 		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game/DOTA%202";
 		URI uri = new URI(baseUrl);
@@ -49,13 +47,11 @@ public class TestGames {
 	@Test
 	public void testGameGetFail() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-
 		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game/DoesNotExist";
 		URI uri = new URI(baseUrl);
 
 		try {
 			restTemplate.getForEntity(uri, String.class);
-			Assert.fail();
 		}
 		catch (HttpClientErrorException err) {
 			assertEquals(404, err.getRawStatusCode());
@@ -66,7 +62,6 @@ public class TestGames {
 	@Test
 	public void testGamePost() throws URISyntaxException{
 		RestTemplate restTemplate = new RestTemplate();
-
 		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game";
 		URI uri = new URI(baseUrl);
 		Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);

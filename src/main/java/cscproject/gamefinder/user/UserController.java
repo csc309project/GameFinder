@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.net.URISyntaxException;
 
 @RestController
@@ -31,17 +30,17 @@ public class UserController {
     }
 
     @PostMapping("/user")
-    public ResponseEntity create(@Valid @RequestBody User user) throws URISyntaxException{
+    public ResponseEntity create(@RequestBody User user) throws URISyntaxException{
         if (userService.newUser(user)) {
+            userRepository.save(user);
             return ResponseEntity.status(HttpStatus.OK).body(user);
         }
         return ResponseEntity.status(HttpStatus.CONFLICT).body("Username already exists");
     }
 
     @PutMapping("/user")
-    public ResponseEntity<User> edit(@Valid @RequestBody User user) {
+    public ResponseEntity<User> edit(@RequestBody User user) {
         userRepository.save(user);
-
         return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 

@@ -1,6 +1,6 @@
 package cscproject.gamefinder;
 
-import org.junit.Assert;
+import cscproject.gamefinder.user.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,15 +20,48 @@ import static junit.framework.TestCase.*;
 public class TestUser {
 
     @LocalServerPort
-    private int randomServerPort;
+    int randomServerPort;
 
     @Test
-    public void testGetUser() throws URISyntaxException {
+    public void testGetUserFail() throws URISyntaxException {
+        RestTemplate restTemplate = new RestTemplate();
+        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user/doesnotexist";
+        URI uri = new URI(baseUrl);
 
+        try {
+            restTemplate.getForEntity(uri, String.class);
+        }
+        catch (HttpClientErrorException err) {
+            assertEquals(404, err.getRawStatusCode());
+        }
+
+    }
+
+    @Test
+    public void testUserPost() throws URISyntaxException{
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
         URI uri = new URI(baseUrl);
-        ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
+        User dummy = new User("user", "password");
+        ResponseEntity<String> result = restTemplate.postForEntity(uri, dummy, String.class);
+
+        assertEquals(200, result.getStatusCodeValue());
     }
 
+    @Test
+    public void testUserPostFail() throws URISyntaxException{
+        RestTemplate restTemplate = new RestTemplate();
+        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
+        URI uri = new URI(baseUrl);
+        User dummy = new User("user", "password");
+        User dummy2 = new User("user", "password");
+
+        try {
+            restTemplate.postForEntity(uri, dummy, String.class);
+            restTemplate.postForEntity(uri, dummy2, String.class);
+        }
+        catch (HttpClientErrorException err) {
+            assertEquals(409, err.getRawStatusCode());
+        }
+    }
 }
