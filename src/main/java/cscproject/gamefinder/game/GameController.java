@@ -24,8 +24,9 @@ public class GameController {
     }
 
     @GetMapping("/game")
-    public List<Game> getGames() {
-        return gameService.getAllGames();
+    public ResponseEntity getGames() {
+        List<Game> allGames = gameService.getAllGames();
+        return ResponseEntity.status(HttpStatus.OK).body(allGames);
     }
 
     @GetMapping("/game/{name}")
