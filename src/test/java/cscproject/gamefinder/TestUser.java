@@ -64,4 +64,37 @@ public class TestUser {
             assertEquals(409, err.getRawStatusCode());
         }
     }
+
+    @Test
+    public void testUserDelete() throws URISyntaxException {
+        RestTemplate restTemplate = new RestTemplate();
+        final String Url = "http://localhost:" + randomServerPort + "/api/user/";
+        final String deleteUrl = "http://localhost:" + randomServerPort + "/api/user/dummy";
+        URI uri = new URI(Url);
+        URI deleteUri = new URI(deleteUrl);
+        User dummy = new User("dummy", "password");
+        restTemplate.postForEntity(uri, dummy, String.class);
+        restTemplate.delete(deleteUri);
+
+        try {
+            restTemplate.getForEntity(deleteUri, String.class);
+        }
+        catch (HttpClientErrorException err) {
+            assertEquals(404, err.getRawStatusCode());
+        }
+    }
+
+    @Test
+    public void testUserDeleteFail() throws URISyntaxException {
+        RestTemplate restTemplate = new RestTemplate();
+        final String deleteUrl = "http://localhost:" + randomServerPort + "/api/user/DoesNotWork";
+        URI deleteUri = new URI(deleteUrl);
+
+        try {
+            restTemplate.delete(deleteUri);
+        }
+        catch (HttpClientErrorException err) {
+            assertEquals(404, err.getRawStatusCode());
+        }
+    }
 }
