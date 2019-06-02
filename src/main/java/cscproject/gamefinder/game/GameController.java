@@ -16,13 +16,13 @@ public class GameController {
     @Autowired
     GameService gameService;
 
-    @GetMapping("/recommendations")
+    @GetMapping(path="/recommendations", produces="application/json")
     public ResponseEntity getRecommendation(@RequestBody String gameName) {
         Game recommendation = gameService.getRecommendation(gameName);
         return ResponseEntity.status(HttpStatus.OK).body(recommendation);
     }
 
-    @GetMapping("/game")
+    @GetMapping(path="/game", produces="application/json")
     public ResponseEntity getGames() {
         List<Game> allGames = gameService.getAllGames();
         return ResponseEntity.status(HttpStatus.OK).body(allGames);
