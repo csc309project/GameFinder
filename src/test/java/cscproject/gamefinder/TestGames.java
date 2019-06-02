@@ -72,16 +72,26 @@ public class TestGames {
 	@Test
 	public void testGameDelete() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game";
-		final String deleteUrl = "http://localhost:" + randomServerPort + "/api/game/name";
-		URI uri = new URI(baseUrl);
+		final String deleteUrl = "http://localhost:" + randomServerPort + "/api/game/DOTA%202";
 		URI deleteUri = new URI(deleteUrl);
-		Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-		restTemplate.postForEntity(uri, dummy, String.class);
 		restTemplate.delete(deleteUri);
 
 		try {
 			restTemplate.getForEntity(deleteUri, String.class);
+		}
+		catch (HttpClientErrorException err) {
+			assertEquals(404, err.getRawStatusCode());
+		}
+	}
+
+	@Test
+	public void testGameDeleteFail() throws URISyntaxException {
+		RestTemplate restTemplate = new RestTemplate();
+		final String deleteUrl = "http://localhost:" + randomServerPort + "/api/game/DoesNotWork";
+		URI deleteUri = new URI(deleteUrl);
+
+		try {
+			restTemplate.delete(deleteUri);
 		}
 		catch (HttpClientErrorException err) {
 			assertEquals(404, err.getRawStatusCode());
@@ -101,6 +111,5 @@ public class TestGames {
 
 		assertEquals(200, result.getStatusCodeValue());
 	}*/
-
 
 }
