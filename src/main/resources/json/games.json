@@ -35,6 +35,114 @@
         "steamURL" : "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/",
         "reviews" : "Mostly Positive",
         "price" : 29.99
+    }, {
+        "name" : "Rust",
+        "description" : "The only aim in Rust is to survive. To do this you will need to overcome struggles such as hunger, thirst and cold. Build a fire. Build a shelter. Kill animals for meat.",
+        "steamURL" : "https://store.steampowered.com/app/252490/Rust/",
+        "reviews" : "Very Positive",
+        "price" : 34.99
+    }, {
+        "name" : "Totally Accurate Battle Simulator",
+        "description" : "Totally Accurate Battle Simulator is a wacky physics-based tactics game. Experience accurate warfare through the ages.",
+        "steamURL" : "https://store.steampowered.com/app/508440/Totally_Accurate_Battle_Simulator/",
+        "reviews" : "Very Positive",
+        "price" : 14.99
+    }, {
+        "name" : "The Elder Scrolls V: Skyrim Special Edition",
+        "description" : "Winner of more than 200 Game of the Year Awards, Skyrim Special Edition brings the epic fantasy to life in stunning detail.",
+        "steamURL" : "https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/",
+        "reviews" : "Very Positive",
+        "price" : 39.99
+    }, {
+        "name" : "Watch_Dogs 2",
+        "description" : "Welcome to San Francisco. Play as Marcus, a brilliant young hacker, and join the most notorious hacker group, DedSec. Your objective: execute the biggest hack of history.",
+        "steamURL" : "https://store.steampowered.com/app/447040/Watch_Dogs_2/",
+        "reviews" : "Mostly Positive",
+        "price" : 59.99
+    }, {
+        "name" : "Beat Saber",
+        "description" : "Beat Saber is a VR rhythm game where you slash the beats of adrenaline-pumping music as they fly towards you, surrounded by a futuristic world.",
+        "steamURL" : "https://store.steampowered.com/app/620980/Beat_Saber/",
+        "reviews" : "Very Positive",
+        "price" : 29.99
+    }, {
+        "name" : "Terraria",
+        "description" : "Dig, fight, explore, build! Nothing is impossible in this action-packed adventure game. Four Pack also available!",
+        "steamURL" : "https://store.steampowered.com/app/105600/Terraria/",
+        "reviews" : "Overwhelmingly Positive",
+        "price" : 9.99
+    }, {
+        "name" : "Dead By Daylight",
+        "description" : "Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught and killed.",
+        "steamURL" : "https://store.steampowered.com/app/381210/Dead_by_Daylight/",
+        "reviews" : "Mostly Positive",
+        "price" : 19.99
+    }, {
+        "name" : "ARK: Survival Evolved",
+        "description" : "Stranded on the shores of a mysterious island, you must learn to survive. Use your cunning to kill or tame the primeval creatures roaming the land, and encounter other players to survive, dominate... and escape!",
+        "steamURL" : "https://store.steampowered.com/app/346110/ARK_Survival_Evolved/",
+        "reviews" : "Mixed",
+        "price" : 49.99
+    }, {
+        "name" : "Garry's Mod",
+        "description" : "Garry's Mod is a physics sandbox. There aren't any predefined aims or goals. We give you the tools and leave you to play.",
+        "steamURL" : "https://store.steampowered.com/app/4000/Garrys_Mod/",
+        "reviews" : "Overwhelmingly Positive",
+        "price" : 9.99
+    }, {
+        "name" : "Mortal Kombat 11",
+        "description" : "Mortal Kombat is back and better than ever in the next evolution of the iconic franchise.",
+        "steamURL" : "https://store.steampowered.com/app/976310/Mortal_Kombat11/",
+        "reviews" : "Mixed",
+        "price" : 59.99
+    }, {
+        "name" : "Farming Simulator 19",
+        "description" : "The best-selling franchise takes a giant leap forward with a complete overhaul of the graphics engine, offering the most striking and immersive visuals and effects, along with the deepest and most complete farming experience ever.",
+        "steamURL" : "https://store.steampowered.com/app/787860/Farming_Simulator_19/",
+        "reviews" : "Mostly Positive",
+        "price" : 34.99
+    }, {
+        "name" : "DayZ",
+        "description" : "The post-soviet country of Chernarus is struck by an unknown virus, turning the majority population into frenzied infected.",
+        "steamURL" : "https://store.steampowered.com/app/221100/DayZ/",
+        "reviews" : "Mixed",
+        "price" : 44.99
+    }, {
+        "name" : "RAGE 2",
+        "description" : "RAGE 2 brings together two studio powerhouses – Avalanche Studios and id Software – to deliver a carnival of carnage where you can go anywhere, shoot anything, and explode everything.",
+        "steamURL" : "https://store.steampowered.com/app/548570/RAGE_2/",
+        "reviews" : "Mixed",
+        "price" : 59.99
+    }, {
+        "name" : "No Man's Sky",
+        "description" : "No Man's Sky is a game about exploration and survival in an infinite procedurally generated universe.",
+        "steamURL" : "https://store.steampowered.com/app/275850/No_Mans_Sky/",
+        "reviews" : "Mixed",
+        "price" : 59.99
+    }, {
+        "name" : "Subnautica: Below Zero",
+        "description" : "Dive into a freezing underwater adventure on an alien planet. Set one year after the original Subnautica, Below Zero challenges you to survive a disaster at an alien research station on Planet 4546B.",
+        "steamURL" : "https://store.steampowered.com/app/848450/Subnautica_Below_Zero/",
+        "reviews" : "Very Positive",
+        "price" : 19.99
+    }, {
+        "name" : "Left 4 Dead 2",
+        "description" : "Set in the zombie apocalypse, Left 4 Dead 2 (L4D2) is the highly anticipated sequel to the award-winning Left 4 Dead, the #1 co-op game of 2008.",
+        "steamURL" : "https://store.steampowered.com/app/550/Left_4_Dead_2/",
+        "reviews" : "Overwhelmingly Positive",
+        "price" : 9.99
+    }, {
+        "name" : "Portal 2",
+        "description" : "The 'Perpetual Testing Initiative' has been expanded to allow you to design co-op puzzles for you and your friends!",
+        "steamURL" : "https://store.steampowered.com/app/620/Portal_2/",
+        "reviews" : "Overwhelmingly Positive",
+        "price" : 9.99
+    }, {
+        "name" : "Just Cause 4",
+        "description" : "Rogue agent Rico Rodriguez journeys to Solis, a huge South American world home of conflict, oppression and extreme weather conditions.",
+        "steamURL" : "https://store.steampowered.com/app/517630/Just_Cause_4/",
+        "reviews" : "Mostly Negative",
+        "price" : 59.99
     }
     ]
 }
