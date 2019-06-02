@@ -1,4 +1,4 @@
-package cscproject.gamefinder;
+/* package cscproject.gamefinder;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -31,3 +31,4 @@ public class TestUser {
         ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
     }
 }
+*/
