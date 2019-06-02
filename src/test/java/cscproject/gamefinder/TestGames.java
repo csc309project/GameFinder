@@ -55,7 +55,6 @@ public class TestGames {
 		}
 		catch (HttpClientErrorException err) {
 			assertEquals(404, err.getRawStatusCode());
-			assertEquals(true, err.getResponseBodyAsString().contains("Could not be found"));
 		}
 	}
 
@@ -70,15 +69,31 @@ public class TestGames {
 		assertEquals(200, result.getStatusCodeValue());
 	}
 
+	@Test
+	public void testGameDelete() throws URISyntaxException {
+		RestTemplate restTemplate = new RestTemplate();
+		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game";
+		final String deleteUrl = "http://localhost:" + randomServerPort + "/api/game/name";
+		URI uri = new URI(baseUrl);
+		URI deleteUri = new URI(deleteUrl);
+		Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
+		restTemplate.postForEntity(uri, dummy, String.class);
+		restTemplate.delete(deleteUri);
+
+		try {
+			restTemplate.getForEntity(deleteUri, String.class);
+		}
+		catch (HttpClientErrorException err) {
+			assertEquals(404, err.getRawStatusCode());
+		}
+	}
+
 /*	@Test
 	public void testGamePut() throws URISyntaxException{
 		RestTemplate restTemplate = new RestTemplate();
-
 		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game";
 		URI uri = new URI(baseUrl);
-
 		HttpHeaders headers = new HttpHeaders();
-
 		Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
 
 		ResponseEntity<String> result = restTemplate.put(uri, dummy);
