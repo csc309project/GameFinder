@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class Parse {
 
-    private Parse() {};
+    private Parse() {}
 
     public static List<Game> createGameList() throws ParseException {
         JSONParser parser = new JSONParser();
