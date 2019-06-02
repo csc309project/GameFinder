@@ -1,6 +1,6 @@
 package cscproject.gamefinder;
 
-import cscproject.gamefinder.game.Game;
+//import cscproject.gamefinder.game.Game;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -63,7 +63,7 @@ public class TestGames {
 		}
 	}
 
-	@Test
+	/*@Test
 	public void testGamePost() throws URISyntaxException{
 		RestTemplate restTemplate = new RestTemplate();
 
@@ -73,7 +73,7 @@ public class TestGames {
 		ResponseEntity<String> result = restTemplate.postForEntity(uri, dummy, String.class);
 
 		assertEquals(200, result.getStatusCodeValue());
-	}
+	} */
 
 /*	@Test
 	public void testGamePut() throws URISyntaxException{
