@@ -22,7 +22,7 @@ import static junit.framework.TestCase.*;
 public class TestGames {
 
 	@LocalServerPort
-	int randomServerPort;
+	private int randomServerPort;
 
 	@Test
 	public void testGetGameListSuccess() throws URISyntaxException

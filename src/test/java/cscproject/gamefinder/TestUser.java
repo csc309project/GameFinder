@@ -20,14 +20,15 @@ import static junit.framework.TestCase.*;
 public class TestUser {
 
     @LocalServerPort
-    int randomServerPort;
+    private int randomServerPort;
 
-    /*@Test
+    @Test
     public void testGetUser() throws URISyntaxException {
 
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
         URI uri = new URI(baseUrl);
         ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
-    }*/
+        assertTrue(true);
+    }
 }
