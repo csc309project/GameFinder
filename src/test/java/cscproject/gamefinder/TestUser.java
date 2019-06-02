@@ -1,5 +1,5 @@
 package cscproject.gamefinder;
-
+/*
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +29,6 @@ public class TestUser {
         final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
         URI uri = new URI(baseUrl);
         ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
-        assertTrue(true);
     }
+    */
 }
