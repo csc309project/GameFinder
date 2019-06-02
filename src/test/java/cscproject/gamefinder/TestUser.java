@@ -97,4 +97,22 @@ public class TestUser {
             assertEquals(404, err.getRawStatusCode());
         }
     }
+
+    @Test
+    public void testUserPut() throws URISyntaxException {
+        RestTemplate restTemplate = new RestTemplate();
+        final String putUrl = "http://localhost:" + randomServerPort + "/api/user";
+        URI putUri = new URI(putUrl);
+        User dummy = new User("dummy", "password");
+        restTemplate.put(putUri, dummy);
+
+        try {
+            final String testUrl = "http://localhost:" + randomServerPort + "/api/game/dummy";
+            URI testUri = new URI(testUrl);
+            restTemplate.getForEntity(testUri, String.class);
+        }
+        catch (HttpClientErrorException err) {
+            assertEquals(404, err.getRawStatusCode());
+        }
+    }
 }

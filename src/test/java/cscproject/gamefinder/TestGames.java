@@ -97,6 +97,24 @@ public class TestGames {
 		}
 	}
 
+	@Test
+	public void testGamePut() throws URISyntaxException {
+		RestTemplate restTemplate = new RestTemplate();
+		final String putUrl = "http://localhost:" + randomServerPort + "/api/game";
+		URI putUri = new URI(putUrl);
+		Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
+		restTemplate.put(putUri, dummy);
+
+		try {
+			final String testUrl = "http://localhost:" + randomServerPort + "/api/game/name";
+			URI testUri = new URI(testUrl);
+			restTemplate.getForEntity(testUri, String.class);
+		}
+		catch (HttpClientErrorException err) {
+			assertEquals(404, err.getRawStatusCode());
+		}
+	}
+
 /*	@Test
 	public void testGamePut() throws URISyntaxException{
 		RestTemplate restTemplate = new RestTemplate();
