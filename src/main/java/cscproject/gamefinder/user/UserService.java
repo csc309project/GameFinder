@@ -10,7 +10,10 @@ public class UserService {
     private UserRepository userRepository;
 
     public boolean newUser(User user) {
-        if (userRepository.findByUsername(user.getUsername()).getUsername() == user.getUsername()) {
+        try {
+            userRepository.findByUsername(user.getUsername()).getUsername();
+        }
+        catch (Exception e){
             return false;
         }
         userRepository.save(user);
