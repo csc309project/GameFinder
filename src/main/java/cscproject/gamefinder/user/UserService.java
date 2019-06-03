@@ -11,6 +11,7 @@ public class UserService {
 
     public boolean newUser(User user) {
         try {
+            System.out.println(userRepository.findAll());
             userRepository.findUserByUsername(user.getUsername()).getUsername();
         }
         catch (Exception e){
