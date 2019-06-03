@@ -18,8 +18,8 @@ public class UserController {
 
     @GetMapping("/user/{username}")
     public ResponseEntity getUser (@PathVariable String username) {
+        User user = userRepository.findUserByUsername(username);
         try {
-            User user = userRepository.findByUsername(username);
             user.getUsername();
             return ResponseEntity.status(HttpStatus.OK).body(user);
         }
@@ -46,7 +46,7 @@ public class UserController {
     @DeleteMapping("/user/{username}")
     public ResponseEntity delete(@PathVariable String username) {
         try {
-            User user = userRepository.findByUsername(username);
+            User user = userRepository.findUserByUsername(username);
             userRepository.deleteById(user.getUserId());
             return ResponseEntity.status(HttpStatus.OK).body("Deleted " + username);
         }

@@ -23,6 +23,16 @@ public class TestUser {
     int randomServerPort;
 
     @Test
+    public void testGetUser() throws URISyntaxException {
+        RestTemplate restTemplate = new RestTemplate();
+        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user/henlo";
+        URI uri = new URI(baseUrl);
+        ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
+        assertEquals(200, result.getStatusCodeValue());
+
+    }
+
+    @Test
     public void testGetUserFail() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = "http://localhost:" + randomServerPort + "/api/user/doesnotexist";
@@ -44,6 +54,18 @@ public class TestUser {
         URI uri = new URI(baseUrl);
         User dummy = new User("user", "password");
         ResponseEntity<String> result = restTemplate.postForEntity(uri, dummy, String.class);
+
+        assertEquals(200, result.getStatusCodeValue());
+    }
+
+    @Test
+    public void testUserPostAdvanced() throws URISyntaxException{
+        RestTemplate restTemplate = new RestTemplate();
+        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
+        URI uri = new URI(baseUrl);
+        User dummy = new User("user", "password");
+        restTemplate.postForEntity(uri, dummy, String.class);
+        ResponseEntity<String> result = restTemplate.getForEntity(new URI(baseUrl + "user"), String.class);
 
         assertEquals(200, result.getStatusCodeValue());
     }
