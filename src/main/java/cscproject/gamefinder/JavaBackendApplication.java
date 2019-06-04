@@ -10,10 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.event.EventListener;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.List;
 
 @SpringBootApplication
+@EnableJpaRepositories
 public class JavaBackendApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

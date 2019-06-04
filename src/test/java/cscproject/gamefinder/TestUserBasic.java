@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.web.client.RestTemplate;
 import static junit.framework.TestCase.*;
@@ -20,7 +21,7 @@ import static junit.framework.TestCase.*;
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TestUserBasic {
     @Autowired
-    private UserRepository userRepo;
+    private UserService userService;
 
     @LocalServerPort
     int randomServerPort;
@@ -28,7 +29,7 @@ public class TestUserBasic {
     @Test
     public void testGetID() {
         User dummy = new User("name", "password");
-        // Dunno how to test this one
+        assertNotNull(dummy.getUserId());
     }
 
     @Test
@@ -51,51 +52,42 @@ public class TestUserBasic {
     }
 
     @Test
-    public void testFindUserName() throws URISyntaxException {
+    public void testFindUserName() {
         User dummy = new User("name", "password");
-        RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
-        URI uri = new URI(baseUrl);
-        restTemplate.postForEntity(uri, dummy, String.class);
-        User find = userRepo.findUserByUsername("name");
+        userService.insert(dummy);
+        User find = userService.findUser("name");
         assertEquals(find.getUsername(), dummy.getUsername());
         assertEquals(find.getPassword(), dummy.getPassword());
     }
 
-    // Test after this fail
 
     @Test
-    public void testFindUserID() throws URISyntaxException {
+    public void testFindUserID() {
         User dummy = new User("name2", "password2");
-        RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
-        URI uri = new URI(baseUrl);
-        restTemplate.postForEntity(uri, dummy, String.class);
-        User find = userRepo.findUserByUserId(dummy.getUserId());
+        userService.insert(dummy);
+        User find = userService.findUserId(dummy.getUserId());
         assertEquals(find.getUsername(), dummy.getUsername());
         assertEquals(find.getPassword(), dummy.getPassword());
     }
 
     @Test
-    public void testNewUser() throws URISyntaxException {
-        UserService userServe = new UserService();
+    public void testNewUser() {
         User dummy = new User("name3", "password3");
         User dummy2 = new User("name4", "password4");
-        assertTrue(userServe.newUser(dummy));
-        assertFalse(userServe.newUser(dummy2));
+        assertTrue(userService.newUser(dummy));
+        assertFalse(userService.newUser(dummy2));
     }
 
     @Test
     public void testInsertGameList() {
-        UserService userServe = new UserService();
-        ArrayList<User> dummyList = new ArrayList<User>();
+        List<User> dummyList = new ArrayList<>();
         User dummy3 = new User("name5", "password5");
         User dummy4 = new User("name6", "password6");
         dummyList.add(dummy3);
         dummyList.add(dummy4);
-        userServe.insertUserList(dummyList);
-        User find3 = userRepo.findUserByUsername("dummy3");
-        User find4 = userRepo.findUserByUsername("dummy4");
+        userService.insertUserList(dummyList);
+        User find3 = userService.findUser("name5");
+        User find4 = userService.findUser("name6");
         assertEquals(dummy3.getUsername(), find3.getUsername());
         assertEquals(dummy3.getPassword(), find3.getPassword());
         assertEquals(dummy4.getUsername(), find4.getUsername());

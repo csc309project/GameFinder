@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 import java.util.Random;
 
+import static java.lang.Math.abs;
+
 @Service
 public class GameService {
     @Autowired
-
     private GameRepository gameRepository;
 
     public Game getRecommendation(String name) {
@@ -18,13 +19,25 @@ public class GameService {
         List<Game> allGames = getAllGames();
         Game currentGame;
         while(true) {
-            int gameID = (randInt.nextInt() * ((allGames.size() - 1) + 1)) + 1;
-            currentGame = gameRepository.findGameByGid(gameID);
-            if (currentGame.getName().equals(name)) {
+            int gameID = abs(randInt.nextInt()) % allGames.size();
+            currentGame = allGames.get(gameID);
+            if (!currentGame.getName().equals(name)) {
                 break;
             }
         }
         return currentGame;
+    }
+
+    public Game gameByName(String name) {
+        return gameRepository.findGameByName(name);
+    }
+
+    public void insert(Game game) {
+        gameRepository.save(game);
+    }
+
+    public Game gameById(long gid) {
+        return gameRepository.findGameByGid(gid);
     }
 
 
