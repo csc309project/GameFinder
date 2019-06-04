@@ -18,7 +18,7 @@ import static junit.framework.TestCase.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestUser {
+public class TestUserAPI {
 
     @LocalServerPort
     int randomServerPort;
