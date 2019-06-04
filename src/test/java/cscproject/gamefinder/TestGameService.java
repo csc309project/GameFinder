@@ -16,53 +16,17 @@ import static junit.framework.TestCase.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TestGamesBasic {
+public class TestGameService {
 
     @Autowired
     private GameService gameService;
-
-    @Test
-    public void testGetGiD() {
-        Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-        // Dunno how to test this one
-    }
-
-    @Test
-    public void testGetName() {
-        Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-        assertEquals(dummy.getName(), "name");
-    }
-
-    @Test
-    public void testGetDescription() {
-        Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-        assertEquals(dummy.getDescription(), "description");
-    }
-
-    @Test
-    public void testGetSteamURL() {
-        Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-        assertEquals(dummy.getSteamURL(), "steam_url");
-    }
-
-    @Test
-    public void testGetReviews() {
-        Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-        assertEquals(dummy.getReviews(), "reviews");
-    }
-
-    @Test
-    public void testGetPrice() {
-        Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-        assertEquals(dummy.getPrice(), 0.0);
-    }
 
     @Test
     public void testGetAllGames() {
         assertEquals(26, gameService.getAllGames().size());
     }
 
-    // Find ID fails
+
     @Test
     public void testFindID() {
         Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
@@ -85,7 +49,6 @@ public class TestGamesBasic {
         assertEquals(find.getReviews(), dummy.getReviews());
     }
 
-    // Everything after this fails as well
     @Test
     public void testGetRecommendation() {
         Game test = gameService.getRecommendation("Dota%202");

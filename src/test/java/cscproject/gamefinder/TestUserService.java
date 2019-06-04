@@ -1,7 +1,6 @@
 package cscproject.gamefinder;
 
 import cscproject.gamefinder.user.User;
-import cscproject.gamefinder.user.UserRepository;
 import cscproject.gamefinder.user.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,17 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.web.client.RestTemplate;
 import static junit.framework.TestCase.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestUserBasic {
+public class TestUserService {
+
     @Autowired
     private UserService userService;
 
@@ -27,35 +24,10 @@ public class TestUserBasic {
     int randomServerPort;
 
     @Test
-    public void testGetID() {
-        User dummy = new User("name", "password");
-        assertNotNull(dummy.getUserId());
-    }
-
-    @Test
-    public void testGetName() {
-        User dummy = new User("name", "password");
-        assertEquals(dummy.getUsername(), "name");
-    }
-
-    @Test
-    public void testGetPassword() {
-        User dummy = new User("name", "password");
-        assertEquals(dummy.getPassword(), "password");
-    }
-
-    @Test
-    public void testSetPassword() {
-        User dummy = new User("name", "password");
-        dummy.setPassword("password2");
-        assertEquals(dummy.getPassword(), "password2");
-    }
-
-    @Test
     public void testFindUserName() {
-        User dummy = new User("name", "password");
+        User dummy = new User("name1", "password1");
         userService.insert(dummy);
-        User find = userService.findUser("name");
+        User find = userService.findUser("name1");
         assertEquals(find.getUsername(), dummy.getUsername());
         assertEquals(find.getPassword(), dummy.getPassword());
     }
@@ -72,10 +44,10 @@ public class TestUserBasic {
 
     @Test
     public void testNewUser() {
-        User dummy = new User("name3", "password3");
-        User dummy2 = new User("name4", "password4");
-        assertTrue(userService.newUser(dummy));
-        assertFalse(userService.newUser(dummy2));
+        User dummy = new User("name", "password");
+        User dummy2 = new User("new", "new");
+        assertFalse(userService.newUser(dummy));
+        assertTrue(userService.newUser(dummy2));
     }
 
     @Test
@@ -93,6 +65,5 @@ public class TestUserBasic {
         assertEquals(dummy4.getUsername(), find4.getUsername());
         assertEquals(dummy4.getPassword(), find4.getPassword());
     }
-
 
 }
