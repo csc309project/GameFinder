@@ -20,7 +20,7 @@ public class GameService {
         while(true) {
             int gameID = (randInt.nextInt() * ((allGames.size() - 1) + 1)) + 1;
             currentGame = gameRepository.findGameByGid(gameID);
-            if (currentGame.getName() != name) {
+            if (currentGame.getName().equals(name)) {
                 break;
             }
         }
