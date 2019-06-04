@@ -3,6 +3,7 @@ package cscproject.gamefinder;
 import cscproject.gamefinder.user.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +18,20 @@ import static junit.framework.TestCase.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestUser {
+public class TestUserAPI {
 
     @LocalServerPort
     int randomServerPort;
+
+    @Test
+    public void testGetUser() throws URISyntaxException {
+        RestTemplate restTemplate = new RestTemplate();
+        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user/henlo";
+        URI uri = new URI(baseUrl);
+        ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
+        assertEquals(200, result.getStatusCodeValue());
+
+    }
 
     @Test
     public void testGetUserFail() throws URISyntaxException {
@@ -42,8 +53,20 @@ public class TestUser {
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
         URI uri = new URI(baseUrl);
-        User dummy = new User("user", "password");
+        User dummy = new User("user1", "password");
         ResponseEntity<String> result = restTemplate.postForEntity(uri, dummy, String.class);
+
+        assertEquals(200, result.getStatusCodeValue());
+    }
+
+    @Test
+    public void testUserPostAdvanced() throws URISyntaxException{
+        RestTemplate restTemplate = new RestTemplate();
+        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
+        URI uri = new URI(baseUrl);
+        User dummy = new User("user2", "password");
+        restTemplate.postForEntity(uri, dummy, String.class);
+        ResponseEntity<String> result = restTemplate.getForEntity(new URI(baseUrl + "/user2"), String.class);
 
         assertEquals(200, result.getStatusCodeValue());
     }
@@ -53,8 +76,8 @@ public class TestUser {
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
         URI uri = new URI(baseUrl);
-        User dummy = new User("user", "password");
-        User dummy2 = new User("user", "password");
+        User dummy = new User("user3", "password");
+        User dummy2 = new User("user4", "password");
 
         try {
             restTemplate.postForEntity(uri, dummy, String.class);
@@ -69,10 +92,10 @@ public class TestUser {
     public void testUserDelete() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
         final String Url = "http://localhost:" + randomServerPort + "/api/user/";
-        final String deleteUrl = "http://localhost:" + randomServerPort + "/api/user/dummy";
+        final String deleteUrl = "http://localhost:" + randomServerPort + "/api/user/user5";
         URI uri = new URI(Url);
         URI deleteUri = new URI(deleteUrl);
-        User dummy = new User("dummy", "password");
+        User dummy = new User("user5", "password");
         restTemplate.postForEntity(uri, dummy, String.class);
         restTemplate.delete(deleteUri);
 
@@ -103,11 +126,11 @@ public class TestUser {
         RestTemplate restTemplate = new RestTemplate();
         final String putUrl = "http://localhost:" + randomServerPort + "/api/user";
         URI putUri = new URI(putUrl);
-        User dummy = new User("dummy", "password");
+        User dummy = new User("user6", "password");
         restTemplate.put(putUri, dummy);
 
         try {
-            final String testUrl = "http://localhost:" + randomServerPort + "/api/game/dummy";
+            final String testUrl = "http://localhost:" + randomServerPort + "/api/game/user6";
             URI testUri = new URI(testUrl);
             restTemplate.getForEntity(testUri, String.class);
         }

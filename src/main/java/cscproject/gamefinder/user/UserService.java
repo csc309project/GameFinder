@@ -11,7 +11,8 @@ public class UserService {
 
     public boolean newUser(User user) {
         try {
-            userRepository.findByUsername(user.getUsername()).getUsername();
+            System.out.println(userRepository.findAll());
+            userRepository.findUserByUsername(user.getUsername()).getUsername();
         }
         catch (Exception e){
             // We know the user isn't in the database now

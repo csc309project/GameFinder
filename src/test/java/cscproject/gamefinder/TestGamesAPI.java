@@ -17,7 +17,7 @@ import static junit.framework.TestCase.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class TestGames {
+public class TestGamesAPI {
 
 	@LocalServerPort
 	int randomServerPort;
@@ -114,19 +114,5 @@ public class TestGames {
 			assertEquals(404, err.getRawStatusCode());
 		}
 	}
-
-/*	@Test
-	public void testGamePut() throws URISyntaxException{
-		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game";
-		URI uri = new URI(baseUrl);
-		HttpHeaders headers = new HttpHeaders();
-		Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-
-		ResponseEntity<String> result = restTemplate.put(uri, dummy);
-		ResponseEntity<Object> response = restTemplate.exchange(uri, HttpMethod.PUT, requestEntity, null, id);
-
-		assertEquals(200, result.getStatusCodeValue());
-	}*/
 
 }
