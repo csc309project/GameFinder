@@ -3,7 +3,6 @@ package cscproject.gamefinder;
 import cscproject.gamefinder.user.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
@@ -23,10 +22,13 @@ public class TestUserAPI {
     @LocalServerPort
     int randomServerPort;
 
+    private String loc = "http://localhost:";
+    private String api = "/api/user";
+
     @Test
     public void testGetUser() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user/henlo";
+        final String baseUrl = loc + randomServerPort + api +"/henlo";
         URI uri = new URI(baseUrl);
         ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
         assertEquals(200, result.getStatusCodeValue());
@@ -36,7 +38,7 @@ public class TestUserAPI {
     @Test
     public void testGetUserFail() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user/doesnotexist";
+        final String baseUrl = loc + randomServerPort + api + "/doesnotexist";
         URI uri = new URI(baseUrl);
 
         try {
@@ -51,7 +53,7 @@ public class TestUserAPI {
     @Test
     public void testUserPost() throws URISyntaxException{
         RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
+        final String baseUrl = loc + randomServerPort + api;
         URI uri = new URI(baseUrl);
         User dummy = new User("user1", "password");
         ResponseEntity<String> result = restTemplate.postForEntity(uri, dummy, String.class);
@@ -74,7 +76,7 @@ public class TestUserAPI {
     @Test
     public void testUserPostFail() throws URISyntaxException{
         RestTemplate restTemplate = new RestTemplate();
-        final String baseUrl = "http://localhost:" + randomServerPort + "/api/user";
+        final String baseUrl = loc + randomServerPort + api;
         URI uri = new URI(baseUrl);
         User dummy = new User("user3", "password");
         User dummy2 = new User("user4", "password");
@@ -110,7 +112,7 @@ public class TestUserAPI {
     @Test
     public void testUserDeleteFail() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
-        final String deleteUrl = "http://localhost:" + randomServerPort + "/api/user/DoesNotWork";
+        final String deleteUrl = loc + randomServerPort + api + "/DoesNotWork";
         URI deleteUri = new URI(deleteUrl);
 
         try {
@@ -124,13 +126,13 @@ public class TestUserAPI {
     @Test
     public void testUserPut() throws URISyntaxException {
         RestTemplate restTemplate = new RestTemplate();
-        final String putUrl = "http://localhost:" + randomServerPort + "/api/user";
+        final String putUrl = loc + randomServerPort + api;
         URI putUri = new URI(putUrl);
         User dummy = new User("user6", "password");
         restTemplate.put(putUri, dummy);
 
         try {
-            final String testUrl = "http://localhost:" + randomServerPort + "/api/game/user6";
+            final String testUrl = loc + randomServerPort + api + "/user6";
             URI testUri = new URI(testUrl);
             restTemplate.getForEntity(testUri, String.class);
         }
