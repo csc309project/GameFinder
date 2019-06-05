@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Game Finder - Search</title>
+		<title>Game Finder - Game</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -53,69 +53,27 @@
       <!-- Main -->
       <article id="main">
         <header>
-          <h2> Search </h2>
-          <div class="topnav">
-            <input type="text" placeholder="Search..">
-          </div>
-          <style>
-            .bottom-two {
-               margin-bottom: 2cm;
-            }
-          </style>
-          <p class="bottom-two">
-            <h4>
-              <a href="search_bar_results.html" class="button fit primary">Search</a>
-            </h4>
-          </p>
+          <h2>Results</h2>
+          <p>Here's what we recommend that you play next. Hope you enjoy.</p>
         </header>
-        
         <section class="wrapper style5">
-          <!-- Comment out current nodes -->
-          <div class="row">
-            <div class="dropdown";>
-              <button class="dropbtn">Genre</button>
-              <div class="dropdown-content">
-                <a href="action_search_results.html">Action</a>
-                <a href="adventure_search_results.html">Adventure</a>
-                <a href="#">Strategy</a>
-                <a href="#">Free to Play</a>
-                <a href="#">Sports</a>
-                <a href="#">Racing</a>
-                <a href="#">Multiplayer</a>
-                <a href="#">Sci-fi</a>
-                <a href="#">Arcade</a>
-                <a href="#">Retro</a>
-                <a href="#">Classic</a>
-                <a href="#">3D Platformer</a>
-              </div>
-            </div>
-
-            <div id="genre-drop-down"></div>
-            <div id="rating-drop-down"></div>
-            <div id="price-slider"></div>
-            <div id="like_button_container"></div>
-            
-            <div class="dropdown";>
-              <button class="dropbtn">Steam Rating</button>
-              <div class="dropdown-content">
-                <a href="#">Overwhelmingly Positive</a>
-                <a href="#">Positive</a>
-                <a href="#">Mostly Positive</a>
-                <a href="#">Mixed</a>
-                <a href="#">Mostly Negative</a>
-                <a href="#">Negative</a>
-                <a href="#">Overwhelmingly Negative</a>
-              </div>
-            </div>
-
-            <form class="col s12">	 
-              <label for="first_name">Set Max Price</label>
-              <input placeholder="Max Price" type="text" class="validate">
-            </form>
+          <div class="inner">
+            <h4>
+              <a href="mp_search_results.html"> < Back to results</a>
+            </h4>
+              <p>
+                <img style="padding: 0 30px; float: right;" src="images/dbdl.jpg" alt="Rust">
+              </p>
+              <p style="margin-top: 20px;"></p>
+            <h3>Dead by Daylight</h3>
+              <p>Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught and killed.</p>
+              <p>You can find more about this game 
+                <a href="https://store.steampowered.com/app/381210/Dead_by_Daylight/">here</a>.
+              </p>
           </div>
         </section>
       </article>
-
+      
       <!-- Footer -->
       <footer id="footer">
         <ul class="icons">
@@ -138,10 +96,10 @@
         <ul class="copyright">
           <li>&copy; Game Finder</li>
         </ul>
-        </footer>
-
-			</div>
-
+      </footer>
+      
+    </div>
+    
 		<!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -150,11 +108,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
-    <script src="../../java/cscproject/gamefinder/app/src/drop_down_genre.js"></script>
-    <script src="../../java/cscproject/gamefinder/app/src/drop_down_rating.js"></script>
-    <script src="../../java/cscproject/gamefinder/app/src/price_slider.js"></script>
-    <script src="../../java/cscproject/gamefinder/app/src/like_button.js"></script>
-
+    
 	</body>
 </html>
