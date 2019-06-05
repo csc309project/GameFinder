@@ -24,7 +24,7 @@ public class TestUserAPI {
 
     private String loc = "http://localhost:";
     private String api = "/api/user";
-    private String bad_pass = "password";
+    private String badPassword = "password";
 
     @Test
     public void testGetUser() throws URISyntaxException {
@@ -56,7 +56,7 @@ public class TestUserAPI {
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = loc + randomServerPort + api;
         URI uri = new URI(baseUrl);
-        User dummy = new User("user1", bad_pass);
+        User dummy = new User("user1", badPassword);
         ResponseEntity<String> result = restTemplate.postForEntity(uri, dummy, String.class);
 
         assertEquals(200, result.getStatusCodeValue());
@@ -67,7 +67,7 @@ public class TestUserAPI {
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = loc + randomServerPort + "/api/user";
         URI uri = new URI(baseUrl);
-        User dummy = new User("user2", bad_pass);
+        User dummy = new User("user2", badPassword);
         restTemplate.postForEntity(uri, dummy, String.class);
         ResponseEntity<String> result = restTemplate.getForEntity(new URI(baseUrl + "/user2"), String.class);
 
@@ -79,8 +79,8 @@ public class TestUserAPI {
         RestTemplate restTemplate = new RestTemplate();
         final String baseUrl = loc + randomServerPort + api;
         URI uri = new URI(baseUrl);
-        User dummy = new User("user3", bad_pass);
-        User dummy2 = new User("user4", bad_pass);
+        User dummy = new User("user3", badPassword);
+        User dummy2 = new User("user4", badPassword;
 
         try {
             restTemplate.postForEntity(uri, dummy, String.class);
@@ -98,7 +98,7 @@ public class TestUserAPI {
         final String deleteUrl = loc + randomServerPort + "/api/user/user5";
         URI uri = new URI(Url);
         URI deleteUri = new URI(deleteUrl);
-        User dummy = new User("user5", bad_pass);
+        User dummy = new User("user5", badPassword);
         restTemplate.postForEntity(uri, dummy, String.class);
         restTemplate.delete(deleteUri);
 
@@ -129,7 +129,7 @@ public class TestUserAPI {
         RestTemplate restTemplate = new RestTemplate();
         final String putUrl = loc + randomServerPort + api;
         URI putUri = new URI(putUrl);
-        User dummy = new User("user6", bad_pass);
+        User dummy = new User("user6", badPassword);
         restTemplate.put(putUri, dummy);
 
         try {
