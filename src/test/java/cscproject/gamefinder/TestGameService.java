@@ -9,9 +9,11 @@ import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import java.util.ArrayList;
 
-import static junit.framework.TestCase.*;
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotSame;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -23,7 +25,7 @@ public class TestGameService {
 
     @Test
     public void testGetAllGames() {
-        assertEquals(26, gameService.getAllGames().size());
+        assertEquals(27, gameService.getAllGames().size());
     }
 
 
