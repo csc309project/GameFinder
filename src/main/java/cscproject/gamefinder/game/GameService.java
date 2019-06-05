@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Random;
-import static java.lang.Math.abs;
 
 @Service
 public class GameService {
@@ -18,7 +17,7 @@ public class GameService {
         List<Game> allGames = getAllGames();
         Game currentGame;
         while (true) {
-            int gameID = abs(randInt.nextInt()) % allGames.size();
+            int gameID = randInt.nextInt() % allGames.size();
             if (gameID < 0) {
                 gameID = gameID * -1;
             }
