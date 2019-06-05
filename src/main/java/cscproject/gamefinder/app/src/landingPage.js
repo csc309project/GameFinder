@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import './index.js';
 import App from "./App";
-import SearchPage from "./search";
+import SearchPage from "./SearchPage";
 
 class LandingPage extends React.Component {
 

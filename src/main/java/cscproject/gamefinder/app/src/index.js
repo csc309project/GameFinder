@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import App from './App';
-import LikeButton from './like_button';
 import LandingPage from './landingPage';
-import SearchPage from './search';
+import SearchPage from './SearchPage';
 import LogInPage from './LogInPage';
-import AboutUs from './AboutUs';
+import AboutUs from './AboutUsPage';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SearchResultPage from "./SearchResultsPage";
+import SearchResultPage from "./SearchResultPage";
 
 const routing = (
     <Router>
