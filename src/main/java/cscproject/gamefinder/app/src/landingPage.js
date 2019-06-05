@@ -1,9 +1,16 @@
 import React from 'react';
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
+import './index.js';
+import App from "./App";
+import SearchPage from "./search";
 
 class LandingPage extends React.Component {
 
     render() {
         return (
+            <Router>
+                <div>
+                    <Route path="/search" component={SearchPage} />
             <div>
                 <title>Game Finder</title>
                 <meta charSet="utf-8" />
@@ -41,7 +48,10 @@ class LandingPage extends React.Component {
                                 that you have enjoyed<br />
                                 to find your next one</p>
                             <ul className="actions special">
-                                <li><a href="search.html" className="button primary">Find Games</a></li>
+
+                                <li><Link to="/search">Find Games</Link></li>
+
+
                             </ul>
                         </div>
                         <a href="#one" className="more scrolly">Learn More</a>
@@ -103,6 +113,8 @@ class LandingPage extends React.Component {
                 </footer>
             </div>
             </div>
+                </div>
+            </Router>
         );
     }
 }

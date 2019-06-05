@@ -1,16 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import LikeButton from './like_button';
 import LandingPage from './landingPage';
+import SearchPage from './search';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const routing = (
+    <Router>
+        <div>
+            <Route path="/" component={LandingPage} />
+            <Route path="/app" component={App} />
+            <Route path="/search" component={SearchPage} />
+        </div>
+    </Router>
+);
+
+
 /* jshint ignore:start */
 //ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(routing, document.getElementById('root'));
 ReactDOM.render(<LikeButton/>, document.getElementById('like_button_container'));
-ReactDOM.render(<LandingPage/>, document.getElementById('landingPage'));
+//ReactDOM.render(<LandingPage/>, document.getElementById('landingPage'));
+//ReactDOM.render(<SearchPage/>, document.getElementById('searchPage'));
+
 /* jshint ignore:end */
 
 // If you want your app to work offline and load faster, you can change
