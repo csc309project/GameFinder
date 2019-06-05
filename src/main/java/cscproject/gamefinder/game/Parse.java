@@ -33,7 +33,7 @@ public class Parse {
             while (iterator.hasNext()) {
                 JSONObject arrObj = (JSONObject) iterator.next();
                 Game temp = new Game((String) arrObj.get("name"), (String) arrObj.get("description"),
-                                     (String) arrObj.get("steamURl"), (String) arrObj.get("reviews"),
+                                     (String) arrObj.get("steamURL"), (String) arrObj.get("reviews"),
                                      (double) arrObj.get("price"));
                 gameArr.add(temp);
             }
