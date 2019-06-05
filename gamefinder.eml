@@ -5,6 +5,276 @@
 		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
 		<excludeFolder url="file://$MODULE_DIR$/target"/>
 	</contentEntry>
+	<lib name="javax.annotation-api-1.3.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2-sources.jar"/>
+	</lib>
+	<lib name="validation-api-2.0.1.Final.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/javax/validation/validation-api/2.0.1.Final/validation-api-2.0.1.Final-sources.jar"/>
+	</lib>
+	<lib name="jstl-1.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/javax/servlet/jstl/1.2/jstl-1.2-sources.jar"/>
+	</lib>
+	<lib name="jaxb-api-2.3.1.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1-sources.jar"/>
+	</lib>
+	<lib name="javax.activation-api-1.2.0.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0-sources.jar"/>
+	</lib>
+	<lib name="javax.transaction-api-1.3.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/javax/transaction/javax.transaction-api/1.3/javax.transaction-api-1.3-sources.jar"/>
+	</lib>
+	<lib name="javax.persistence-api-2.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2-sources.jar"/>
+	</lib>
+	<lib name="spring-boot-2.1.4.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/boot/spring-boot/2.1.4.RELEASE/spring-boot-2.1.4.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-core-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-core/5.1.6.RELEASE/spring-core-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-jcl-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-jcl/5.1.6.RELEASE/spring-jcl-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-context-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-context/5.1.6.RELEASE/spring-context-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-aop-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-aop/5.1.6.RELEASE/spring-aop-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-beans-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-beans/5.1.6.RELEASE/spring-beans-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-expression-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-expression/5.1.6.RELEASE/spring-expression-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-boot-autoconfigure-2.1.4.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/boot/spring-boot-autoconfigure/2.1.4.RELEASE/spring-boot-autoconfigure-2.1.4.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="logback-classic-1.2.3.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3-sources.jar"/>
+	</lib>
+	<lib name="logback-core-1.2.3.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3-sources.jar"/>
+	</lib>
+	<lib name="slf4j-api-1.7.26.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26-sources.jar"/>
+	</lib>
+	<lib name="log4j-to-slf4j-2.11.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/apache/logging/log4j/log4j-to-slf4j/2.11.2/log4j-to-slf4j-2.11.2-sources.jar"/>
+	</lib>
+	<lib name="log4j-api-2.11.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2-sources.jar"/>
+	</lib>
+	<lib name="jul-to-slf4j-1.7.26.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/slf4j/jul-to-slf4j/1.7.26/jul-to-slf4j-1.7.26-sources.jar"/>
+	</lib>
+	<lib name="snakeyaml-1.23.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/yaml/snakeyaml/1.23/snakeyaml-1.23-sources.jar"/>
+	</lib>
+	<lib name="mongodb-driver-3.8.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/mongodb/mongodb-driver/3.8.2/mongodb-driver-3.8.2-sources.jar"/>
+	</lib>
+	<lib name="bson-3.8.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/mongodb/bson/3.8.2/bson-3.8.2-sources.jar"/>
+	</lib>
+	<lib name="mongodb-driver-core-3.8.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/mongodb/mongodb-driver-core/3.8.2/mongodb-driver-core-3.8.2-sources.jar"/>
+	</lib>
+	<lib name="spring-data-mongodb-2.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/data/spring-data-mongodb/2.1.6.RELEASE/spring-data-mongodb-2.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-tx-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-tx/5.1.6.RELEASE/spring-tx-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-data-commons-2.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/data/spring-data-commons/2.1.6.RELEASE/spring-data-commons-2.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-boot-actuator-autoconfigure-2.1.4.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/boot/spring-boot-actuator-autoconfigure/2.1.4.RELEASE/spring-boot-actuator-autoconfigure-2.1.4.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-boot-actuator-2.1.4.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/boot/spring-boot-actuator/2.1.4.RELEASE/spring-boot-actuator-2.1.4.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="jackson-databind-2.9.8.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8-sources.jar"/>
+	</lib>
+	<lib name="jackson-annotations-2.9.0.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0-sources.jar"/>
+	</lib>
+	<lib name="jackson-core-2.9.8.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/fasterxml/jackson/core/jackson-core/2.9.8/jackson-core-2.9.8-sources.jar"/>
+	</lib>
+	<lib name="jackson-datatype-jsr310-2.9.8.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.9.8/jackson-datatype-jsr310-2.9.8-sources.jar"/>
+	</lib>
+	<lib name="micrometer-core-1.1.4.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/io/micrometer/micrometer-core/1.1.4/micrometer-core-1.1.4-sources.jar"/>
+	</lib>
+	<lib name="HdrHistogram-2.1.9.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/hdrhistogram/HdrHistogram/2.1.9/HdrHistogram-2.1.9-sources.jar"/>
+	</lib>
+	<lib name="LatencyUtils-2.0.3.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3-sources.jar"/>
+	</lib>
+	<lib name="spring-web-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="jackson-datatype-jdk8-2.9.8.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.9.8/jackson-datatype-jdk8-2.9.8-sources.jar"/>
+	</lib>
+	<lib name="jackson-module-parameter-names-2.9.8.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/fasterxml/jackson/module/jackson-module-parameter-names/2.9.8/jackson-module-parameter-names-2.9.8-sources.jar"/>
+	</lib>
+	<lib name="tomcat-embed-core-9.0.17.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/apache/tomcat/embed/tomcat-embed-core/9.0.17/tomcat-embed-core-9.0.17-sources.jar"/>
+	</lib>
+	<lib name="tomcat-embed-el-9.0.17.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/apache/tomcat/embed/tomcat-embed-el/9.0.17/tomcat-embed-el-9.0.17-sources.jar"/>
+	</lib>
+	<lib name="tomcat-embed-websocket-9.0.17.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.17/tomcat-embed-websocket-9.0.17-sources.jar"/>
+	</lib>
+	<lib name="hibernate-validator-6.0.16.Final.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/hibernate/validator/hibernate-validator/6.0.16.Final/hibernate-validator-6.0.16.Final-sources.jar"/>
+	</lib>
+	<lib name="jboss-logging-3.3.2.Final.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final-sources.jar"/>
+	</lib>
+	<lib name="classmate-1.4.0.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/fasterxml/classmate/1.4.0/classmate-1.4.0-sources.jar"/>
+	</lib>
+	<lib name="spring-webmvc-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="tomcat-embed-jasper-9.0.17.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/apache/tomcat/embed/tomcat-embed-jasper/9.0.17/tomcat-embed-jasper-9.0.17-sources.jar"/>
+	</lib>
+	<lib name="ecj-3.15.0.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/eclipse/jdt/ecj/3.15.0/ecj-3.15.0-sources.jar"/>
+	</lib>
+	<lib name="bootstrap-3.3.7.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/webjars/bootstrap/3.3.7/bootstrap-3.3.7-sources.jar"/>
+	</lib>
+	<lib name="jquery-1.11.1.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/webjars/jquery/1.11.1/jquery-1.11.1-sources.jar"/>
+	</lib>
+	<lib name="spring-boot-devtools-2.1.4.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/boot/spring-boot-devtools/2.1.4.RELEASE/spring-boot-devtools-2.1.4.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-boot-test-2.1.4.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/boot/spring-boot-test/2.1.4.RELEASE/spring-boot-test-2.1.4.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-boot-test-autoconfigure-2.1.4.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/boot/spring-boot-test-autoconfigure/2.1.4.RELEASE/spring-boot-test-autoconfigure-2.1.4.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="json-path-2.4.0.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0-sources.jar"/>
+	</lib>
+	<lib name="json-smart-2.3.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/net/minidev/json-smart/2.3/json-smart-2.3-sources.jar"/>
+	</lib>
+	<lib name="accessors-smart-1.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/net/minidev/accessors-smart/1.2/accessors-smart-1.2-sources.jar"/>
+	</lib>
+	<lib name="asm-5.0.4.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/ow2/asm/asm/5.0.4/asm-5.0.4-sources.jar"/>
+	</lib>
+	<lib name="junit-4.12.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/junit/junit/4.12/junit-4.12-sources.jar"/>
+	</lib>
+	<lib name="hamcrest-core-1.3.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar"/>
+	</lib>
+	<lib name="assertj-core-3.11.1.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1-sources.jar"/>
+	</lib>
+	<lib name="mockito-core-2.23.4.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/mockito/mockito-core/2.23.4/mockito-core-2.23.4-sources.jar"/>
+	</lib>
+	<lib name="byte-buddy-1.9.12.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/net/bytebuddy/byte-buddy/1.9.12/byte-buddy-1.9.12-sources.jar"/>
+	</lib>
+	<lib name="byte-buddy-agent-1.9.12.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/net/bytebuddy/byte-buddy-agent/1.9.12/byte-buddy-agent-1.9.12-sources.jar"/>
+	</lib>
+	<lib name="objenesis-2.6.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/objenesis/objenesis/2.6/objenesis-2.6-sources.jar"/>
+	</lib>
+	<lib name="hamcrest-library-1.3.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/hamcrest/hamcrest-library/1.3/hamcrest-library-1.3-sources.jar"/>
+	</lib>
+	<lib name="jsonassert-1.5.0.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0-sources.jar"/>
+	</lib>
+	<lib name="android-json-0.0.20131108.vaadin1.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1-sources.jar"/>
+	</lib>
+	<lib name="spring-test-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-test/5.1.6.RELEASE/spring-test-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="xmlunit-core-2.6.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/xmlunit/xmlunit-core/2.6.2/xmlunit-core-2.6.2-sources.jar"/>
+	</lib>
+	<lib name="aspectjweaver-1.9.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/aspectj/aspectjweaver/1.9.2/aspectjweaver-1.9.2-sources.jar"/>
+	</lib>
+	<lib name="HikariCP-3.2.0.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/zaxxer/HikariCP/3.2.0/HikariCP-3.2.0-sources.jar"/>
+	</lib>
+	<lib name="spring-jdbc-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-jdbc/5.1.6.RELEASE/spring-jdbc-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="hibernate-core-5.3.9.Final.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/hibernate/hibernate-core/5.3.9.Final/hibernate-core-5.3.9.Final-sources.jar"/>
+	</lib>
+	<lib name="javassist-3.23.1-GA.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/javassist/javassist/3.23.1-GA/javassist-3.23.1-GA-sources.jar"/>
+	</lib>
+	<lib name="jandex-2.0.5.Final.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final-sources.jar"/>
+	</lib>
+	<lib name="dom4j-2.1.1.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/dom4j/dom4j/2.1.1/dom4j-2.1.1-sources.jar"/>
+	</lib>
+	<lib name="hibernate-commons-annotations-5.0.4.Final.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/hibernate/common/hibernate-commons-annotations/5.0.4.Final/hibernate-commons-annotations-5.0.4.Final-sources.jar"/>
+	</lib>
+	<lib name="spring-data-jpa-2.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/data/spring-data-jpa/2.1.6.RELEASE/spring-data-jpa-2.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-orm-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-orm/5.1.6.RELEASE/spring-orm-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="spring-aspects-5.1.6.RELEASE.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/springframework/spring-aspects/5.1.6.RELEASE/spring-aspects-5.1.6.RELEASE-sources.jar"/>
+	</lib>
+	<lib name="h2-1.4.199.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/h2database/h2/1.4.199/h2-1.4.199-sources.jar"/>
+	</lib>
+	<lib name="lombok-1.18.8.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/projectlombok/lombok/1.18.8/lombok-1.18.8-sources.jar"/>
+	</lib>
+	<lib name="json-simple-1.1.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/com/googlecode/json-simple/json-simple/1.1/json-simple-1.1-sources.jar"/>
+	</lib>
+	<lib name="junit-jupiter-api-5.4.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/junit/jupiter/junit-jupiter-api/5.4.2/junit-jupiter-api-5.4.2-sources.jar"/>
+	</lib>
+	<lib name="apiguardian-api-1.0.0.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0-sources.jar"/>
+	</lib>
+	<lib name="opentest4j-1.1.1.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1-sources.jar"/>
+	</lib>
+	<lib name="junit-platform-commons-1.3.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/junit/platform/junit-platform-commons/1.3.2/junit-platform-commons-1.3.2-sources.jar"/>
+	</lib>
+	<lib name="junit-jupiter-engine-5.4.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/junit/jupiter/junit-jupiter-engine/5.4.2/junit-jupiter-engine-5.4.2-sources.jar"/>
+	</lib>
+	<lib name="junit-platform-engine-1.3.2.jar" scope="COMPILE">
+		<srcroot url="file://$M2_REPO$/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2-sources.jar"/>
+	</lib>
 	<lib name="Maven: org.yaml:snakeyaml:1.23" scope="RUNTIME"/>
 	<lib name="Maven: org.springframework.boot:spring-boot-starter-tomcat:2.1.4.RELEASE" scope="PROVIDED"/>
 	<lib name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.17" scope="PROVIDED"/>
@@ -39,7 +309,7 @@
 	<lib name="Maven: org.junit.jupiter:junit-jupiter-engine:5.4.2" scope="TEST"/>
 	<lib name="Maven: org.junit.platform:junit-platform-engine:1.3.2" scope="TEST"/>
 	<levels>
-		<level name="Maven: org.springframework.boot:spring-boot-starter-data-mongodb:2.1.4.RELEASE" value="project"/>
+		<level name="Maven: org.springframework.boot:spring-boot-starter-actuator:2.1.4.RELEASE" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-starter:2.1.4.RELEASE" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-starter-logging:2.1.4.RELEASE" value="project"/>
 		<level name="Maven: ch.qos.logback:logback-classic:1.2.3" value="project"/>
@@ -48,22 +318,12 @@
 		<level name="Maven: org.apache.logging.log4j:log4j-api:2.11.2" value="project"/>
 		<level name="Maven: org.slf4j:jul-to-slf4j:1.7.26" value="project"/>
 		<level name="Maven: org.yaml:snakeyaml:1.23" value="project"/>
-		<level name="Maven: org.mongodb:mongodb-driver:3.8.2" value="project"/>
-		<level name="Maven: org.mongodb:bson:3.8.2" value="project"/>
-		<level name="Maven: org.mongodb:mongodb-driver-core:3.8.2" value="project"/>
-		<level name="Maven: org.springframework.data:spring-data-mongodb:2.1.6.RELEASE" value="project"/>
-		<level name="Maven: org.springframework:spring-tx:5.1.6.RELEASE" value="project"/>
-		<level name="Maven: org.springframework:spring-context:5.1.6.RELEASE" value="project"/>
-		<level name="Maven: org.springframework:spring-beans:5.1.6.RELEASE" value="project"/>
-		<level name="Maven: org.springframework:spring-expression:5.1.6.RELEASE" value="project"/>
-		<level name="Maven: org.springframework.data:spring-data-commons:2.1.6.RELEASE" value="project"/>
-		<level name="Maven: org.slf4j:slf4j-api:1.7.26" value="project"/>
-		<level name="Maven: org.springframework.boot:spring-boot-starter-actuator:2.1.4.RELEASE" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-actuator-autoconfigure:2.1.4.RELEASE" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-actuator:2.1.4.RELEASE" value="project"/>
 		<level name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" value="project"/>
 		<level name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" value="project"/>
 		<level name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" value="project"/>
+		<level name="Maven: org.springframework:spring-context:5.1.6.RELEASE" value="project"/>
 		<level name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.8" value="project"/>
 		<level name="Maven: io.micrometer:micrometer-core:1.1.4" value="project"/>
 		<level name="Maven: org.hdrhistogram:HdrHistogram:2.1.9" value="project"/>
@@ -77,8 +337,10 @@
 		<level name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" value="project"/>
 		<level name="Maven: com.fasterxml:classmate:1.4.0" value="project"/>
 		<level name="Maven: org.springframework:spring-web:5.1.6.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-beans:5.1.6.RELEASE" value="project"/>
 		<level name="Maven: org.springframework:spring-webmvc:5.1.6.RELEASE" value="project"/>
 		<level name="Maven: org.springframework:spring-aop:5.1.6.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-expression:5.1.6.RELEASE" value="project"/>
 		<level name="Maven: org.springframework.boot:spring-boot-starter-tomcat:2.1.4.RELEASE" value="project"/>
 		<level name="Maven: javax.annotation:javax.annotation-api:1.3.2" value="project"/>
 		<level name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.17" value="project"/>
@@ -99,6 +361,7 @@
 		<level name="Maven: net.minidev:json-smart:2.3" value="project"/>
 		<level name="Maven: net.minidev:accessors-smart:1.2" value="project"/>
 		<level name="Maven: org.ow2.asm:asm:5.0.4" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-api:1.7.26" value="project"/>
 		<level name="Maven: junit:junit:4.12" value="project"/>
 		<level name="Maven: org.assertj:assertj-core:3.11.1" value="project"/>
 		<level name="Maven: org.mockito:mockito-core:2.23.4" value="project"/>
@@ -130,7 +393,9 @@
 		<level name="Maven: org.dom4j:dom4j:2.1.1" value="project"/>
 		<level name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.4.Final" value="project"/>
 		<level name="Maven: org.springframework.data:spring-data-jpa:2.1.6.RELEASE" value="project"/>
+		<level name="Maven: org.springframework.data:spring-data-commons:2.1.6.RELEASE" value="project"/>
 		<level name="Maven: org.springframework:spring-orm:5.1.6.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-tx:5.1.6.RELEASE" value="project"/>
 		<level name="Maven: org.springframework:spring-aspects:5.1.6.RELEASE" value="project"/>
 		<level name="Maven: com.h2database:h2:1.4.199" value="project"/>
 		<level name="Maven: org.projectlombok:lombok:1.18.8" value="project"/>
