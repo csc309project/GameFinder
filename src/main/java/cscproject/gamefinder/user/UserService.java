@@ -11,7 +11,6 @@ public class UserService {
 
     public boolean newUser(User user) {
         User temp = userRepository.findUserByUsername(user.getUsername());
-        System.out.println(temp);
         if (temp == null) {
             // We know the user isn't in the database now
             userRepository.save(user);
