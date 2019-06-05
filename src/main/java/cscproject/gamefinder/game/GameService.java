@@ -19,6 +19,9 @@ public class GameService {
         Game currentGame;
         while (true) {
             int gameID = abs(randInt.nextInt()) % allGames.size();
+            if (gameID < 0) {
+                gameID = gameID * -1;
+            }
             currentGame = allGames.get(gameID);
             if (!currentGame.getName().equalsIgnoreCase(name)) {
                 break;
