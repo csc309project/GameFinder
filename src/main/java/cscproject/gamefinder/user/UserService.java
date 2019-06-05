@@ -10,10 +10,9 @@ public class UserService {
     private UserRepository userRepository;
 
     public boolean newUser(User user) {
-        try {
-            userRepository.findUserByUsername(user.getUsername());
-        }
-        catch (Exception e) {
+        User temp = userRepository.findUserByUsername(user.getUsername());
+        System.out.println(temp);
+        if (temp == null) {
             // We know the user isn't in the database now
             userRepository.save(user);
             return true;
