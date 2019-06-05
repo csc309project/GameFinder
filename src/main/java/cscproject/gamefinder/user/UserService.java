@@ -19,12 +19,6 @@ public class UserService {
             return true;
         }
         return false;
-//        if (temp == null) {
-//            // We know the user isn't in the database now
-//            userRepository.save(user);
-//            return true;
-//        }
-//        return false;
     }
 
     public User findUser(String username) {
