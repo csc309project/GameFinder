@@ -1,5 +1,16 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+'use strict';
+
+<Dropdown>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
+    Dropdown Button
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
 
 class Card extends Component {
   constructor() {
@@ -22,35 +33,30 @@ class Card extends Component {
 
   render() {
     return e(
-      <div>
-        <button onClick={this.showMenu}>
-          Show menu
-        </button>
+      'div',
+        'button', { onClick: () => {this.showMenu}
         
         {
-          this.state.showMenu
-            ? (
-              <div className="menu">
-                <button> Action </button>
-                <button> Adventure </button>
-                <button> Strategy </button>
-                <button> Free to play </button>
-                <button> Sports </button>
-                <button> Racing </button>
-                <button> Multiplayer </button>
-                <button> Sci-fi </button>
-                <button> Arcade </button>
-                <button> Retro </button>
-                <button> Classic </button>
-                <button> 3D Platformer </button>
-              </div>
+          this.state.showMenu(
+               'div', {className="menu"},
+               'button': Action, { onClick: () => {fetch("/api/games");},
+               'button': Adventure, { onClick: () => {fetch("/api/games");},
+               'button': Strategy { onClick: () => {fetch("/api/games");},
+               'button': Free, { onClick: () => {fetch("/api/games");},
+               'button': Sports, { onClick: () => {fetch("/api/games");},
+               'button': Racing, { onClick: () => {fetch("/api/games");},
+               'button': Multiplayer, { onClick: () => {fetch("/api/games");},
+               'button': Sci-fi, { onClick: () => {fetch("/api/games");},
+               'button': Arcade, { onClick: () => {fetch("/api/games");},
+               'button': Retro, { onClick: () => {fetch("/api/games");},
+               'button': Classic, { onClick: () => {fetch("/api/games");},
+               'button': ThreeDim, { onClick: () => {fetch("/api/games");}
             )
             : (
                 'button',
                 { onClick: () => fetch('/api/game') }
             )
         }
-      </div>
     );
   }
 }
