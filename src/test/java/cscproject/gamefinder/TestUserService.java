@@ -44,8 +44,9 @@ public class TestUserService {
 
     @Test
     public void testNewUser() {
-        User dummy = new User("name", "password");
-        User dummy2 = new User("new", "new");
+        User dummy = new User("name3", "password");
+        User dummy2 = new User("name4", "new");
+        userService.insert(dummy);
         assertFalse(userService.newUser(dummy));
         assertTrue(userService.newUser(dummy2));
     }
