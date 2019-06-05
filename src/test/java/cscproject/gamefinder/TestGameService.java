@@ -51,11 +51,11 @@ public class TestGameService {
 
     @Test
     public void testGetRecommendation() {
-        Game test = gameService.getRecommendation("Dota%202");
-        assertNotSame(test.getName(), "Dota 2");
-        assertNotSame(test.getReviews(), "Very Positive");
-        assertNotSame(test.getSteamURL(), "https://store.steampowered.com/app/570/Dota_2/");
-        assertNotSame(test.getDescription(), "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover.");
+        Game test = gameService.getRecommendation("Dota 2");
+        assertEquals("DOTA 2", test.getName());
+        assertEquals("Very Positive", test.getReviews());
+        assertEquals("https://store.steampowered.com/app/570/Dota_2/", test.getSteamURL());
+        assertEquals("Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover.", test.getDescription());
     }
 
     @Test
@@ -68,14 +68,14 @@ public class TestGameService {
         gameService.insertGameList(dummyList);
         Game find3 = gameService.gameByName("name3");
         Game find4 = gameService.gameByName("name4");
-        assertEquals(find3.getName(), dummy3.getName());
-        assertEquals(find3.getPrice(), dummy3.getPrice());
-        assertEquals(find3.getSteamURL(), dummy3.getSteamURL());
-        assertEquals(find3.getReviews(), dummy3.getReviews());
-        assertEquals(find4.getName(), dummy4.getName());
-        assertEquals(find4.getPrice(), dummy4.getPrice());
-        assertEquals(find4.getSteamURL(), dummy4.getSteamURL());
-        assertEquals(find4.getReviews(), dummy4.getReviews());
+        assertEquals(dummy3.getName(), find3.getName());
+        assertEquals(dummy3.getPrice(), find3.getPrice());
+        assertEquals(dummy3.getSteamURL(), find3.getSteamURL());
+        assertEquals(dummy3.getReviews(), find3.getReviews());
+        assertEquals(dummy4.getName(), find4.getName());
+        assertEquals(dummy4.getPrice(), find4.getPrice());
+        assertEquals(dummy4.getSteamURL(), find4.getSteamURL());
+        assertEquals(dummy4.getReviews(), find4.getReviews());
 
     }
 }

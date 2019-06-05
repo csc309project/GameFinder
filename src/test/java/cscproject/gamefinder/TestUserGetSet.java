@@ -30,20 +30,20 @@ public class TestUserGetSet {
     @Test
     public void testGetName() {
         User dummy = new User("name2", "password2");
-        assertEquals(dummy.getUsername(), "name2");
+        assertEquals("name2", dummy.getUsername());
     }
 
     @Test
     public void testGetPassword() {
         User dummy = new User("name3", "password3");
-        assertEquals(dummy.getPassword(), "password3");
+        assertEquals("password3", dummy.getPassword());
     }
 
     @Test
     public void testSetPassword() {
         User dummy = new User("name4", "password4");
         dummy.setPassword("password5");
-        assertEquals(dummy.getPassword(), "password5");
+        assertEquals("password5", dummy.getPassword());
     }
 
 }
