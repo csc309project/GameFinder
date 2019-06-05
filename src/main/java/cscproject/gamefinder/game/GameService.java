@@ -3,6 +3,8 @@ package cscproject.gamefinder.game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Random;
+import static java.lang.Math.abs;
 
 @Service
 public class GameService {
@@ -10,11 +12,13 @@ public class GameService {
     private GameRepository gameRepository;
 
     public Game getRecommendation(String name) {
-        Game currentGame = new Game("name", "description", "steam_url", "reviews", 0.0);
+        Random randInt = new Random();
         List<Game> allGames = getAllGames();
-        for (int index = 0; index < allGames.size(); index++) {
-            if (allGames.get(index).getName().equalsIgnoreCase(name)) {
-                currentGame = allGames.get(index);
+        Game currentGame;
+        while (true) {
+            int gameID = abs(randInt.nextInt()) % allGames.size();
+            currentGame = allGames.get(gameID);
+            if (!currentGame.getName().equalsIgnoreCase(name)) {
                 break;
             }
         }

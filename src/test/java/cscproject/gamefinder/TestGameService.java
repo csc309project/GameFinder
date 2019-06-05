@@ -52,10 +52,9 @@ public class TestGameService {
     @Test
     public void testGetRecommendation() {
         Game test = gameService.getRecommendation("Dota 2");
-        assertEquals("DOTA 2", test.getName());
-        assertEquals("Very Positive", test.getReviews());
-        assertEquals("https://store.steampowered.com/app/570/Dota_2/", test.getSteamURL());
-        assertEquals("Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover.", test.getDescription());
+        assertNotSame(test.getName(), "Dota 2");
+        assertNotSame(test.getSteamURL(), "https://store.steampowered.com/app/570/Dota_2/");
+        assertNotSame(test.getDescription(), "Every day, millions of players worldwide enter battle as one of over a hundred Dota heroes. And no matter if it's their 10th hour of play or 1,000th, there's always something new to discover.");
     }
 
     @Test
