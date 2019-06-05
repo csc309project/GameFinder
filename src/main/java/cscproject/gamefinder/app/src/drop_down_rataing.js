@@ -28,9 +28,7 @@ class Rating extends Component {
         </button>
         
         {
-          this.state.showMenu
-            ? (
-              <div className="menu">
+          this.state.showMenu(<div className="menu">
                 <button> Overwhelmingly Postitve </button>
                 <button> Postive </button>
                 <button> Mostly Postive </button>
@@ -39,10 +37,6 @@ class Rating extends Component {
                 <button> Negative </button>
                 <button> Overwhelmingly Negative </button>
               </div>
-            )
-            : (
-                'button',
-                { onClick: () => fetch('/api/game') }
             )
         }
       </div>
