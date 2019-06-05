@@ -80,7 +80,7 @@ public class TestUserAPI {
         final String baseUrl = loc + randomServerPort + api;
         URI uri = new URI(baseUrl);
         User dummy = new User("user3", badPassword);
-        User dummy2 = new User("user4", badPassword;
+        User dummy2 = new User("user4", badPassword);
 
         try {
             restTemplate.postForEntity(uri, dummy, String.class);
