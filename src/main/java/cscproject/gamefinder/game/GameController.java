@@ -30,9 +30,9 @@ public class GameController {
 
     @GetMapping("/game/{name}")
     @ResponseBody
-    public ResponseEntity getGamesWithName(@PathVariable String name) {
-        Game game = gameRepository.findGameByName(name);
+    public ResponseEntity getGameWithName(@PathVariable String name) {
         try {
+            Game game = gameRepository.findGameByName(name);
             game.getName();
             return ResponseEntity.status(HttpStatus.OK).body(game);
         }
@@ -47,22 +47,28 @@ public class GameController {
         return ResponseEntity.status(HttpStatus.OK).body("Posted " + game.getName());
     }
 
-    @PutMapping("/game")
-    public ResponseEntity put(@RequestBody Game game) {
-        gameRepository.save(game);
-        return ResponseEntity.status(HttpStatus.OK).body("Edited " + game.getName());
+    @PutMapping("/game/{name}")
+    public ResponseEntity put(@RequestBody Game game, @PathVariable String name) {
+        try {
+            Game temp = gameRepository.findGameByName(name);
+            gameRepository.deleteById(temp.getGid());
+            gameRepository.save(game);
+            return ResponseEntity.status(HttpStatus.OK).body("Edited " + name);
+        }
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Could not find game to edit");
+        }
     }
 
     @DeleteMapping("/game/{name}")
     public ResponseEntity delete(@PathVariable String name) {
-        ResponseEntity res = getGamesWithName(name);
-
-        if(res.getStatusCode() == HttpStatus.OK) {
-            Game temp = (Game) res.getBody();
+        try {
+            Game temp = gameRepository.findGameByName(name);
             gameRepository.deleteById(temp.getGid());
             return ResponseEntity.status(HttpStatus.OK).body("Deleted " + name);
         }
-
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Could not find game to delete");
+        catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Could not find game to deleted");
+        }
     }
 }

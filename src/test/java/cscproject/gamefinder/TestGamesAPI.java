@@ -22,11 +22,13 @@ public class TestGamesAPI {
 	@LocalServerPort
 	int randomServerPort;
 
+	private String loc = "http://localhost:";
+	private String api = "/api/game";
+
 	@Test
-	public void testGetGameListSuccess() throws URISyntaxException
-	{
+	public void testGetGameListSuccess() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game";
+		final String baseUrl = loc + randomServerPort + api;
 		URI uri = new URI(baseUrl);
 		ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
 
@@ -36,7 +38,7 @@ public class TestGamesAPI {
 	@Test
 	public void testGameGet() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game/DOTA%202";
+		final String baseUrl = loc + randomServerPort + api + "/DOTA%202";
 		URI uri = new URI(baseUrl);
 		ResponseEntity<String> result = restTemplate.getForEntity(uri, String.class);
 
@@ -46,7 +48,7 @@ public class TestGamesAPI {
 	@Test
 	public void testGameGetFail() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game/DoesNotExist";
+		final String baseUrl = loc + randomServerPort + api + "/DoesNotExist";
 		URI uri = new URI(baseUrl);
 
 		try {
@@ -60,9 +62,9 @@ public class TestGamesAPI {
 	@Test
 	public void testGamePost() throws URISyntaxException{
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = "http://localhost:" + randomServerPort + "/api/game";
+		final String baseUrl = loc + randomServerPort + api;
 		URI uri = new URI(baseUrl);
-		Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
+		Game dummy = new Game("testGame", "description", "steam_url", "Mixed", 0.0);
 		ResponseEntity<String> result = restTemplate.postForEntity(uri, dummy, String.class);
 
 		assertEquals(200, result.getStatusCodeValue());
@@ -71,7 +73,7 @@ public class TestGamesAPI {
 	@Test
 	public void testGameDelete() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String deleteUrl = "http://localhost:" + randomServerPort + "/api/game/DOTA%202";
+		final String deleteUrl = loc + randomServerPort + api + "/DOTA%202";
 		URI deleteUri = new URI(deleteUrl);
 		restTemplate.delete(deleteUri);
 
@@ -100,15 +102,25 @@ public class TestGamesAPI {
 	@Test
 	public void testGamePut() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String putUrl = "http://localhost:" + randomServerPort + "/api/game";
-		URI putUri = new URI(putUrl);
-		Game dummy = new Game("name", "description", "steam_url", "reviews", 0.0);
-		restTemplate.put(putUri, dummy);
+		final String url = loc + randomServerPort + api;
+		URI uri = new URI(url);
+		Game dummy = new Game("testGame2", "new description", "steam_url", "Positive", 0.0);
+		restTemplate.postForEntity(uri, dummy, String.class);
+		URI testUri = new URI("http://localhost:" + randomServerPort + "/api/game/testGame2");
+		dummy = new Game("testGame2", "new description", "steam_url", "Negative", 9.99);
+		restTemplate.put(testUri, dummy);
+		ResponseEntity<String> result = restTemplate.getForEntity(testUri, String.class);
+		assertEquals(200, result.getStatusCodeValue());
+	}
 
+	@Test
+	public void testGamePutFail() throws URISyntaxException {
+		RestTemplate restTemplate = new RestTemplate();
+		final String putUrl = "http://localhost:" + randomServerPort + "/api/game/noGame";
+		URI putUri = new URI(putUrl);
+		Game dummy = new Game("noGame", "description", "steam_url", "Negative", 0.0);
 		try {
-			final String testUrl = "http://localhost:" + randomServerPort + "/api/game/name";
-			URI testUri = new URI(testUrl);
-			restTemplate.getForEntity(testUri, String.class);
+			restTemplate.put(putUri, dummy);
 		}
 		catch (HttpClientErrorException err) {
 			assertEquals(404, err.getRawStatusCode());
