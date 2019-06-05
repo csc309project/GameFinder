@@ -8,11 +8,13 @@ import static java.lang.Math.abs;
 
 @Service
 public class GameService {
+
     @Autowired
     private GameRepository gameRepository;
+    
+    Random randInt = new Random();
 
     public Game getRecommendation(String name) {
-        Random randInt = new Random();
         List<Game> allGames = getAllGames();
         Game currentGame;
         while (true) {
