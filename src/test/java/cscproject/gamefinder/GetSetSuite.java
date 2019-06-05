@@ -8,9 +8,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         TestGameGet.class,
         TestGameSet.class,
-        TestGameService.class,
-        TestGamesAPI.class
+        TestUserGetSet.class
 })
 
-public class GameTest {
+public class GetSetSuite {
 }

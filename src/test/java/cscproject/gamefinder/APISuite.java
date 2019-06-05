@@ -6,9 +6,9 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 
 @Suite.SuiteClasses({
-        TestGameService.class,
-        TestUserService.class
+        TestGamesAPI.class,
+        TestUserAPI.class
 })
 
-public class ServiceTest {
+public class APISuite {
 }
