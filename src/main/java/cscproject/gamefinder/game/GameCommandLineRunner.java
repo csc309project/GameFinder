@@ -3,7 +3,6 @@ package cscproject.gamefinder.game;
 
 import cscproject.gamefinder.user.User;
 import cscproject.gamefinder.user.UserRepository;
-import cscproject.gamefinder.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

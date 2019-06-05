@@ -11,21 +11,38 @@ public class UserService {
 
     public boolean newUser(User user) {
         try {
-            System.out.println(userRepository.findAll());
-            userRepository.findUserByUsername(user.getUsername()).getUsername();
+            userRepository.findUserByUsername(user.getUsername());
         }
-        catch (Exception e){
+        catch (Exception e) {
             // We know the user isn't in the database now
             userRepository.save(user);
             return true;
         }
         return false;
+//        if (temp == null) {
+//            // We know the user isn't in the database now
+//            userRepository.save(user);
+//            return true;
+//        }
+//        return false;
+    }
+
+    public User findUser(String username) {
+        return userRepository.findUserByUsername(username);
+    }
+
+    public User findUserId(Long uid) {
+        return userRepository.findUserByUserId(uid);
     }
 
     public void insertUserList(List<User> users) {
         for (User user : users) {
             userRepository.save(user);
         }
+    }
+
+    public void insert(User user) {
+        userRepository.save(user);
     }
 
 
