@@ -52,4 +52,17 @@ public class Game {
         return this.price;
     }
 
+    public void setGid(long gid) {this.gid = gid;}
+
+    public void setName(String name) {this.name = name;}
+
+    public void setDescription(String description) {this.description = description;}
+
+    public void setSteamURL(String url) {this.steamURL = url;}
+
+    public void setReviews(String review) {this.reviews = review;}
+
+    public void setPrice(double price) {this.price = price;}
+
+
 }
