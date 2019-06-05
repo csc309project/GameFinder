@@ -6,8 +6,11 @@ import App from './App';
 import LikeButton from './like_button';
 import LandingPage from './landingPage';
 import SearchPage from './search';
+import LogInPage from './LogInPage';
+import AboutUs from './AboutUs';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchResultPage from "./SearchResultsPage";
 
 const routing = (
     <Router>
@@ -15,6 +18,9 @@ const routing = (
             <Route path="/" component={LandingPage} />
             <Route path="/app" component={App} />
             <Route path="/search" component={SearchPage} />
+            <Route path="/login" component={LogInPage} />
+            <Route path="/aboutUs" component={AboutUs} />
+            <Route path="/searchResults" component={SearchResultPage} />
         </div>
     </Router>
 );
