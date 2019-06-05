@@ -143,6 +143,12 @@
         "steamURL" : "https://store.steampowered.com/app/517630/Just_Cause_4/",
         "reviews" : "Mostly Negative",
         "price" : 59.99
+    }, {
+        "name" : "Rocket League",
+        "description" : "Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.",
+        "steamURL" : "https://store.steampowered.com/app/252950/Rocket_League/",
+        "reviews" : "Very Negative",
+        "price" : 19.99
     }
     ]
 }
