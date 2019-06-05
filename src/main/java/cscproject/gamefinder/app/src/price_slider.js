@@ -27,10 +27,6 @@ class PriceSlider extends React.Component {
         </div>
       </Slider>
 
-    (
-        'button',
-        { onClick: () => fetch('/api/game') }
-    )
     );
     
   }

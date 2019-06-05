@@ -21,11 +21,7 @@ const routing = (
 
 
 /* jshint ignore:start */
-//ReactDOM.render(<App/>, document.getElementById('root'));
 ReactDOM.render(routing, document.getElementById('root'));
-ReactDOM.render(<LikeButton/>, document.getElementById('like_button_container'));
-//ReactDOM.render(<LandingPage/>, document.getElementById('landingPage'));
-//ReactDOM.render(<SearchPage/>, document.getElementById('searchPage'));
 
 /* jshint ignore:end */
 
